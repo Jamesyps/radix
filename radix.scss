@@ -3,7 +3,5 @@
 @import 'radix/tools/tools';
 @import 'radix/config/variables';
 
-.testing {
-    font-family: font-stack();
-    background-color: colour();
-}
+@import 'radix/layout/layout';
+

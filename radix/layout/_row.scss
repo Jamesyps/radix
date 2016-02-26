@@ -1,0 +1,51 @@
+.#{$radix-namespace} {
+    &-container {
+        display: flex;
+    }
+
+    &.is-stack {
+        flex-direction: column;
+    }
+
+    &.is-reverse:not(#{&}-stack) {
+        flex-direction: row-reverse;
+    }
+
+    &.is-reverse {
+        flex-direction: column-reverse;
+    }
+
+    &.is-center {
+        justify-content: center;
+    }
+
+    &.is-vcenter {
+        align-items: center;
+    }
+
+    &.is-auto {
+        flex-wrap: wrap;
+    }
+
+    &.is-flush {
+        > .rdx-item {
+            margin: 0;
+            padding: 0;
+        }
+    }
+}
+
+.#{$radix-namespace}-item {
+    flex: 1;
+    padding: 10px;
+
+    &[class *= '-span-'] {
+        flex: none;
+    }
+
+    @for $i from 1 through $radix-gs-columns {
+        .#{$radix-namespace}-container &-span-#{$i} {
+            width: ($i / $radix-gs-columns) * 100%;
+        }
+    }
+}

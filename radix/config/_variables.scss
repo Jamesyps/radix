@@ -5,6 +5,10 @@ $user-colours: () !default;
 $user-font-stack: () !default;
 $user-font-sizes: () !default;
 
+$radix-namespace: 'rdx' !default;
+$radix-gs-columns: 12;
+$radix-gs-gutter: 20px;
+
 // Default colour-scheme
 $radix-colours: merge((
     'default': #ECF0F1,
