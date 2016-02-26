@@ -1,0 +1,84 @@
+////
+/// Functions
+/// @group Functions
+/// @author James Wigger
+////
+
+/// Merge
+/// Combines two maps together allowing non-destructive extension of properties
+///
+/// @param {map} $default - the default options map
+/// @param {map} $extension - the extending properties map
+///
+/// @access public
+/// @since 1.0.0
+@function merge($default, $extension) {
+    @return map-merge($default, $extension);
+}
+
+/// Colour
+/// Returns a colour value from the system colours map
+///
+/// @require {map} $radix-colours - the Radix colours map
+/// @param {string} $key [default] - the key / label of the colour
+///
+/// @access public
+/// @since 1.0.0
+@function colour($key: 'default') {
+    @if not map-has-key($radix-colours, $key) {
+        @error 'No colour exists with the key: #{$key}';
+    }
+
+    @return map-get($radix-colours, $key);
+}
+
+/// Tint
+/// Returns a tinted version of a colour (mixed with white)
+///
+/// @param {string} $key [default] - the key / label of the colour
+/// @param {int} $percentage - the amount to mix the colours
+///
+/// @access public
+/// @since 1.0.0
+@function tint($key: 'default', $percentage: 25) {
+    @return mix(#FFF, colour($key), $percentage);
+}
+
+/// Shade
+/// Returns a shaded version of a colour (mixed with black)
+///
+/// @param {string} $key [default] - the key / label of the colour
+/// @param {int} $percentage - the amount to mix the colours
+///
+/// @access public
+/// @since 1.0.0
+@function shade($key: 'default', $percentage: 25) {
+    @return mix(#000, colour($key), $percentage);
+}
+
+/// Trans
+/// Returns a transparent version of a colour (rgba)
+///
+/// @param {string} $key [default] - the key / label of the colour
+/// @param {float} $amount - the opacity of the colour
+///
+/// @access public
+/// @since 1.0.0
+@function trans($key: 'default', $amount: 0.5) {
+    @return transparentize(colour($key), $amount);
+}
+
+/// Font Stack
+/// Returns a font stack by key
+///
+/// @param {string} $key [default] - the key / label of the font stack
+///
+/// @access public
+/// @since 1.0.0
+@function font-stack($key: 'default') {
+    @if not map-has-key($radix-colours, $key) {
+        @error 'No font stack exists with the key: #{$key}';
+    }
+
+    @return map-get($radix-font-stack, $key);
+}

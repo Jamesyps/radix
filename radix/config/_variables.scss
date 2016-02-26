@@ -1,0 +1,44 @@
+@charset "utf-8";
+
+// User configurations
+$user-colours: () !default;
+$user-font-stack: () !default;
+$user-font-sizes: () !default;
+
+// Default colour-scheme
+$radix-colours: merge((
+    'default': #ECF0F1,
+    'primary': #3498DB,
+    'secondary': #34495E,
+    'success': #63B75D,
+    'error': #EF2F2A,
+    'notice': #F1C40E
+), $user-colours);
+
+// Default font stack
+$radix-font-stack: merge((
+    'default': (
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        "Roboto",
+        "Oxygen",
+        "Ubuntu",
+        "Cantarell",
+        "Fira Sans",
+        "Droid Sans",
+        "Helvetica Neue",
+        Arial,
+        sans-serif
+    )
+), $user-font-stack);
+
+// Default font sizes
+$radix-font-sizes: merge((
+    'default': (1.5, 1.8),
+    'xl': (4.8, 5.2),
+    'lg': (3.6, 3.8),
+    'md': (2.4, 2.6),
+    'sm': (1.8, 2.0),
+    'xs': (1.4, 1.6),
+), $user-font-sizes);
