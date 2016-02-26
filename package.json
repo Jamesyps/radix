@@ -1,0 +1,25 @@
+{
+  "name": "radix-framework",
+  "version": "0.1.0",
+  "description": "The Root Studio modern framework based on Flexbox",
+  "main": "radix.scss",
+  "scripts": {
+
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@bitbucket.org/JimRoot/radix-framework.git"
+  },
+  "keywords": [
+    "css",
+    "scss",
+    "sass",
+    "flexbox",
+    "framework",
+    "grid",
+    "responsive"
+  ],
+  "author": "James Wigger <james@rootstudio.co.uk>",
+  "license": "MIT",
+  "homepage": "https://bitbucket.org/JimRoot/radix-framework#readme"
+}
