@@ -166,62 +166,35 @@ input[type=button] {
 }
 
 .rdx-grid {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
 }
 
 .rdx-grid.\--stack {
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: column;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
 }
 
 .rdx-grid.\--reverse:not(.\--stack) {
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: reverse;
-  -webkit-flex-direction: row-reverse;
-      -ms-flex-direction: row-reverse;
-          flex-direction: row-reverse;
+  flex-direction: row-reverse;
 }
 
 .rdx-grid.\--reverse {
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: reverse;
-  -webkit-flex-direction: column-reverse;
-      -ms-flex-direction: column-reverse;
-          flex-direction: column-reverse;
+  flex-direction: column-reverse;
 }
 
 .rdx-grid.\--center {
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  justify-content: center;
 }
 
 .rdx-grid.\--vcenter {
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-      -ms-flex-align: center;
-              -ms-grid-row-align: center;
-          align-items: center;
+  align-items: center;
 }
 
 .rdx-grid.\--auto {
-  -webkit-flex-wrap: wrap;
-      -ms-flex-wrap: wrap;
-          flex-wrap: wrap;
+  flex-wrap: wrap;
 }
 
 .rdx-grid.\--auto > .rdx-item {
-  -webkit-box-flex: 0;
-  -webkit-flex: none;
-      -ms-flex: none;
-          flex: none;
+  flex: none;
   width: 8.33333%;
 }
 
@@ -231,18 +204,12 @@ input[type=button] {
 }
 
 .rdx-item {
-  -webkit-box-flex: 1;
-  -webkit-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
+  flex: 1;
   padding: 10px;
 }
 
 .rdx-item[class*='-span-'] {
-  -webkit-box-flex: 0;
-  -webkit-flex: none;
-      -ms-flex: none;
-          flex: none;
+  flex: none;
 }
 
 .rdx-grid .rdx-item.\--span-1 {
@@ -340,4 +307,5 @@ input[type=button] {
 .rdx-grid .rdx-item.\--offset-12 {
   margin-left: 100%;
 }
+
 /*# sourceMappingURL=radix.css.map */

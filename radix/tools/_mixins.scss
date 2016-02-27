@@ -1,3 +1,23 @@
+////
+/// Mixins
+/// @group Mixins
+/// @author James Wigger
+////
+
+/// Grid
+/// Generates grid code for a containing element. Useful if users do not wish to use the CSS grid classes
+/// in their markup.
+///
+/// @param {bool} $auto - Enables the auto-grid function where items will wrap
+/// @param {bool} $center - Horizontally centers items
+/// @param {bool} $flush -  Removes all spacing between items
+/// @param {bool} $reverse - Reveres the order of the items
+/// @param {bool} $stack - Display items in a column rather than horizontally
+/// @param {bool} $vcenter - Vertically center items in grid
+///
+/// @outputs Outputs flexbox CSS properties for generating the Radix grid system
+/// @access public
+/// @since 1.0.0
 @mixin rdx-grid($auto: false, $center: false, $flush: false, $reverse: false, $stack: false, $vcenter: false) {
     display: flex;
 
@@ -38,48 +58,116 @@
     }
 }
 
+/// Media Query From
+/// Output a media query for sizes greater than the given breakpoint
+///
+/// @param {string} $key - the name of the breakpoint to use
+/// @content the contents of the media query block
+/// @output a min-width media query
+///
+/// @access public
+/// @since 1.0.0
 @mixin rdx-mq-from($key) {
     @media screen and (min-width: breakpoint($key)) {
         @content;
     }
 }
 
+/// Media Query Until
+/// Output a media query for sizes up-to the the given breakpoint size
+///
+/// @param {string} $key - the name of the breakpoint to use
+/// @content the contents of the media query block
+/// @output a max-width media query
+///
+/// @access public
+/// @since 1.0.0
 @mixin rdx-mq-until($key) {
     @media screen and (max-width: breakpoint($key) - 0.01) {
         @content;
     }
 }
 
+/// Media Query Between
+/// Output a book-ended media query for targeting between two breakpoints
+///
+/// @param {string} $min - the name of the smaller breakpoint
+/// @param {string} $max - the name of the larger breakpoint
+/// @content the contents of the media query block
+/// @output a min-width + max-width media query
+///
+/// @access public
+/// @since 1.0.0
 @mixin rdx-mq-between($min, $max) {
     @media screen and (min-width: breakpoint($min)) and (max-width: breakpoint($max)) {
         @content;
     }
 }
 
+/// Media Query XL
+/// Helper mixin for outputting the media query of largest breakpoint size
+///
+/// @content the contents of the media query block
+/// @output a min-width media query
+///
+/// @access public
+/// @since 1.0.0
 @mixin rdx-mq-xl() {
     @include rdx-mq-from('lg') {
         @content;
     }
 }
 
+/// Media Query LG
+/// Helper mixin for outputting the media query up to the second-largest breakpoint size
+///
+/// @content the contents of the media query block
+/// @output a max-width media query
+///
+/// @access public
+/// @since 1.0.0
 @mixin rdx-mq-lg() {
     @include rdx-mq-until('lg') {
         @content;
     }
 }
 
+/// Media Query MD
+/// Helper mixin for outputting the media query up to the medium breakpoint size
+///
+/// @content the contents of the media query block
+/// @output a max-width media query
+///
+/// @access public
+/// @since 1.0.0
 @mixin rdx-mq-md() {
     @include rdx-mq-until('md') {
         @content;
     }
 }
 
+/// Media Query SM
+/// Helper mixin for outputting the media query up to the smaller breakpoint size
+///
+/// @content the contents of the media query block
+/// @output a max-width media query
+///
+/// @access public
+/// @since 1.0.0
 @mixin rdx-mq-sm() {
     @include rdx-mq-until('sm') {
         @content;
     }
 }
 
+/// Media Query MD
+/// Helper mixin for outputting the media query up to the smallest breakpoint size
+///
+/// @content the contents of the media query block
+/// @output a max-width media query
+///
+/// @access public
+/// @since 1.0.0
 @mixin rdx-mq-xs() {
     @include rdx-mq-until('xs') {
         @content;
