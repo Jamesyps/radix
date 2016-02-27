@@ -5,7 +5,7 @@
 
             > .#{$radix-namespace}-item {
                 flex: none;
-                width: (1 / $radix-gs-columns) * 100%;
+                width: column-width(1);
             }
         }
 
@@ -53,13 +53,37 @@
             flex: none;
         }
 
+        &.\--offset-quarter {
+            margin-left: 25%;
+        }
+
+        &.\--span-quarter {
+            width: 25%;
+        }
+
+        &.\--offset-half {
+            margin-left: 50%;
+        }
+
+        &.\--span-half {
+            width: 50%;
+        }
+
+        &.\--offset-third {
+            margin-left: 33.3333%;
+        }
+
+        &.\--span-third {
+            width: 33.3333%;
+        }
+
         @for $i from 1 through $radix-gs-columns {
-            .#{$radix-namespace}-grid &.\--span-#{$i} {
-                width: ($i / $radix-gs-columns) * 100%;
+            .#{$radix-namespace}-grid &.\--offset-#{$i} {
+                margin-left: column-width($i);
             }
 
-            .#{$radix-namespace}-grid &.\--offset-#{$i} {
-                margin-left: ($i / $radix-gs-columns) * 100%;
+            .#{$radix-namespace}-grid &.\--span-#{$i} {
+                width: column-width($i);
             }
         }
     }

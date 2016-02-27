@@ -89,10 +89,30 @@
     @return map-get($radix-font-stack, $key);
 }
 
+/// Breakpoint
+/// Returns a breakpoint by key
+///
+/// @param {string} $key - the key / label of the breakpoint
+/// @return {string} - a width value
+///
+/// @access public
+/// @since 1.0.0
 @function breakpoint($key) {
     @if not map-has-key($radix-breakpoints, $key) {
         @error 'No breakpoint exists with the key: #{$key}';
     }
 
     @return map-get($radix-breakpoints, $key);
+}
+
+/// Column Width
+/// Calculates the width value for a span of columns
+///
+/// @param {string} $span - the number of columns to span
+/// @return {float} - a width value
+///
+/// @access public
+/// @since 1.0.0
+@function column-width($span) {
+    @return ($span / $radix-gs-columns) * 100%;
 }

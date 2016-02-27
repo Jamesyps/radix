@@ -165,8 +165,26 @@ input[type=button] {
   overflow: visible;
 }
 
-.rdx-grid.\--stack {
-  flex-direction: column;
+.rdx-grid.\--auto {
+  flex-wrap: wrap;
+}
+
+.rdx-grid.\--auto > .rdx-item {
+  flex: none;
+  width: 8.33333%;
+}
+
+.rdx-grid.\--center {
+  justify-content: center;
+}
+
+.rdx-grid.\--flush > .rdx-item {
+  margin: 0;
+  padding: 0;
+}
+
+.rdx-grid.\--force {
+  display: flex;
 }
 
 .rdx-grid.\--reverse:not(.\--stack) {
@@ -177,26 +195,12 @@ input[type=button] {
   flex-direction: column-reverse;
 }
 
-.rdx-grid.\--center {
-  justify-content: center;
+.rdx-grid.\--stack {
+  flex-direction: column;
 }
 
 .rdx-grid.\--vcenter {
   align-items: center;
-}
-
-.rdx-grid.\--auto {
-  flex-wrap: wrap;
-}
-
-.rdx-grid.\--auto > .rdx-item {
-  flex: none;
-  width: 8.33333%;
-}
-
-.rdx-grid.\--flush > .rdx-item {
-  margin: 0;
-  padding: 0;
 }
 
 @media screen and (min-width: 35em) {
@@ -214,100 +218,124 @@ input[type=button] {
   flex: none;
 }
 
-.rdx-grid .rdx-item.\--span-1 {
-  width: 8.33333%;
+.rdx-item.\--offset-quarter {
+  margin-left: 25%;
+}
+
+.rdx-item.\--span-quarter {
+  width: 25%;
+}
+
+.rdx-item.\--offset-half {
+  margin-left: 50%;
+}
+
+.rdx-item.\--span-half {
+  width: 50%;
+}
+
+.rdx-item.\--offset-third {
+  margin-left: 33.3333%;
+}
+
+.rdx-item.\--span-third {
+  width: 33.3333%;
 }
 
 .rdx-grid .rdx-item.\--offset-1 {
   margin-left: 8.33333%;
 }
 
-.rdx-grid .rdx-item.\--span-2 {
-  width: 16.66667%;
+.rdx-grid .rdx-item.\--span-1 {
+  width: 8.33333%;
 }
 
 .rdx-grid .rdx-item.\--offset-2 {
   margin-left: 16.66667%;
 }
 
-.rdx-grid .rdx-item.\--span-3 {
-  width: 25%;
+.rdx-grid .rdx-item.\--span-2 {
+  width: 16.66667%;
 }
 
 .rdx-grid .rdx-item.\--offset-3 {
   margin-left: 25%;
 }
 
-.rdx-grid .rdx-item.\--span-4 {
-  width: 33.33333%;
+.rdx-grid .rdx-item.\--span-3 {
+  width: 25%;
 }
 
 .rdx-grid .rdx-item.\--offset-4 {
   margin-left: 33.33333%;
 }
 
-.rdx-grid .rdx-item.\--span-5 {
-  width: 41.66667%;
+.rdx-grid .rdx-item.\--span-4 {
+  width: 33.33333%;
 }
 
 .rdx-grid .rdx-item.\--offset-5 {
   margin-left: 41.66667%;
 }
 
-.rdx-grid .rdx-item.\--span-6 {
-  width: 50%;
+.rdx-grid .rdx-item.\--span-5 {
+  width: 41.66667%;
 }
 
 .rdx-grid .rdx-item.\--offset-6 {
   margin-left: 50%;
 }
 
-.rdx-grid .rdx-item.\--span-7 {
-  width: 58.33333%;
+.rdx-grid .rdx-item.\--span-6 {
+  width: 50%;
 }
 
 .rdx-grid .rdx-item.\--offset-7 {
   margin-left: 58.33333%;
 }
 
-.rdx-grid .rdx-item.\--span-8 {
-  width: 66.66667%;
+.rdx-grid .rdx-item.\--span-7 {
+  width: 58.33333%;
 }
 
 .rdx-grid .rdx-item.\--offset-8 {
   margin-left: 66.66667%;
 }
 
-.rdx-grid .rdx-item.\--span-9 {
-  width: 75%;
+.rdx-grid .rdx-item.\--span-8 {
+  width: 66.66667%;
 }
 
 .rdx-grid .rdx-item.\--offset-9 {
   margin-left: 75%;
 }
 
-.rdx-grid .rdx-item.\--span-10 {
-  width: 83.33333%;
+.rdx-grid .rdx-item.\--span-9 {
+  width: 75%;
 }
 
 .rdx-grid .rdx-item.\--offset-10 {
   margin-left: 83.33333%;
 }
 
-.rdx-grid .rdx-item.\--span-11 {
-  width: 91.66667%;
+.rdx-grid .rdx-item.\--span-10 {
+  width: 83.33333%;
 }
 
 .rdx-grid .rdx-item.\--offset-11 {
   margin-left: 91.66667%;
 }
 
-.rdx-grid .rdx-item.\--span-12 {
-  width: 100%;
+.rdx-grid .rdx-item.\--span-11 {
+  width: 91.66667%;
 }
 
 .rdx-grid .rdx-item.\--offset-12 {
   margin-left: 100%;
+}
+
+.rdx-grid .rdx-item.\--span-12 {
+  width: 100%;
 }
 
 /*# sourceMappingURL=radix.css.map */

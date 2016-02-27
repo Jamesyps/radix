@@ -58,6 +58,29 @@
     }
 }
 
+/// Span
+/// Sets the span width for an element not using the CSS grid classes
+///
+/// @output flex configuration and a width property
+///
+/// @access public
+/// @since 1.0.0
+@mixin rdx-span($span) {
+    flex: 0;
+    width: column-width($span);
+}
+
+/// Offset
+/// Sets the offset for an element not using the CSS grid classes
+///
+/// @output margin-left value
+///
+/// @access public
+/// @since 1.0.0
+@mixin rdx-offset($span) {
+    margin-left: column-width($span);
+}
+
 /// Media Query From
 /// Output a media query for sizes greater than the given breakpoint
 ///
