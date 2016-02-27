@@ -2,13 +2,11 @@
     display: flex;
 
     @if $auto {
-        &.\--auto {
-            flex-wrap: wrap;
+        flex-wrap: wrap;
 
-            > * {
-                flex: none;
-                width: (1 / $radix-gs-columns) * 100%;
-            }
+        > * {
+            flex: none;
+            width: (1 / $radix-gs-columns) * 100%;
         }
     }
 
@@ -25,13 +23,9 @@
 
     @if $reverse {
         @if $stack {
-            &.\--reverse {
-                flex-direction: column-reverse;
-            }
+            flex-direction: column-reverse;
         } @else {
-            &.\--reverse {
-                flex-direction: row-reverse;
-            }
+            flex-direction: row-reverse;
         }
     }
 
