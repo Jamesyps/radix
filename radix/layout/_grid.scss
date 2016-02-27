@@ -1,7 +1,5 @@
 @if $radix-css-grid {
     .#{$radix-namespace}-grid {
-        display: flex;
-
         &.\--stack {
             flex-direction: column;
         }
@@ -36,6 +34,10 @@
                 margin: 0;
                 padding: 0;
             }
+        }
+
+        @include rdx-mq-sm {
+            display: flex;
         }
     }
 

@@ -113,7 +113,7 @@
 /// @access public
 /// @since 1.0.0
 @mixin rdx-mq-xl() {
-    @include rdx-mq-from('lg') {
+    @include rdx-mq-from('xl') {
         @content;
     }
 }
@@ -127,7 +127,7 @@
 /// @access public
 /// @since 1.0.0
 @mixin rdx-mq-lg() {
-    @include rdx-mq-until('lg') {
+    @include rdx-mq-from('lg') {
         @content;
     }
 }
@@ -141,7 +141,7 @@
 /// @access public
 /// @since 1.0.0
 @mixin rdx-mq-md() {
-    @include rdx-mq-until('md') {
+    @include rdx-mq-from('md') {
         @content;
     }
 }
@@ -155,7 +155,7 @@
 /// @access public
 /// @since 1.0.0
 @mixin rdx-mq-sm() {
-    @include rdx-mq-until('sm') {
+    @include rdx-mq-from('sm') {
         @content;
     }
 }
@@ -169,7 +169,7 @@
 /// @access public
 /// @since 1.0.0
 @mixin rdx-mq-xs() {
-    @include rdx-mq-until('xs') {
+    @include rdx-mq-until('sm') {
         @content;
     }
 }
