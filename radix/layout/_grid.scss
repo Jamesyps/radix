@@ -1,7 +1,27 @@
 @if $radix-css-grid {
     .#{$radix-namespace}-grid {
-        &.\--stack {
-            flex-direction: column;
+        &.\--auto {
+            flex-wrap: wrap;
+
+            > .#{$radix-namespace}-item {
+                flex: none;
+                width: (1 / $radix-gs-columns) * 100%;
+            }
+        }
+
+        &.\--center {
+            justify-content: center;
+        }
+
+        &.\--flush {
+            > .#{$radix-namespace}-item {
+                margin: 0;
+                padding: 0;
+            }
+        }
+
+        &.\--force {
+            display: flex;
         }
 
         &.\--reverse:not(.\--stack) {
@@ -12,28 +32,12 @@
             flex-direction: column-reverse;
         }
 
-        &.\--center {
-            justify-content: center;
+        &.\--stack {
+            flex-direction: column;
         }
 
         &.\--vcenter {
             align-items: center;
-        }
-
-        &.\--auto {
-            flex-wrap: wrap;
-
-            > .#{$radix-namespace}-item {
-                flex: none;
-                width: (1 / $radix-gs-columns) * 100%;
-            }
-        }
-
-        &.\--flush {
-            > .#{$radix-namespace}-item {
-                margin: 0;
-                padding: 0;
-            }
         }
 
         @include rdx-mq-sm {
