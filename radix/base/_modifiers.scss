@@ -9,3 +9,11 @@
         }
     }
 }
+
+@if $radix-css-fonts {
+    @each $class, $value in $radix-font-sizes {
+        .\--text-#{$class} {
+            @include rdx-font-size($class);
+        }
+    }
+}

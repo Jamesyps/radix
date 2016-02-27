@@ -1,0 +1,22 @@
+html {
+    background-color: colour('default');
+
+    overflow-x: hidden;
+    overflow-y: scroll;
+
+    text-rendering: optimizeLegibility;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    font-size: 1rem;
+}
+
+body,
+button,
+input,
+select,
+textarea {
+    font-family: font-stack('default');
+}

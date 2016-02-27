@@ -14,12 +14,13 @@ $radix-gs-columns: 12 !default;
 $radix-gs-gutter: 20px !default;
 
 // Container options
-$radix-centered-width: 1280px;
-$radix-fluid-width: 90%;
+$radix-centered-width: 1280px !default;
+$radix-fluid-width: 90% !default;
 
 // CSS options
 $radix-css-grid: true !default;
 $radix-css-colours: true !default;
+$radix-css-fonts: true !default;
 
 // Default colour-scheme
 $radix-colours: merge((
@@ -51,12 +52,12 @@ $radix-font-stack: merge((
 
 // Default font sizes
 $radix-font-sizes: merge((
-    'default': (1.5, 1.8),
-    'xl': (4.8, 5.2),
-    'lg': (3.6, 3.8),
-    'md': (2.4, 2.6),
-    'sm': (1.8, 2.0),
-    'xs': (1.4, 1.6),
+    'default': (15, 18),
+    'xl': (48, 52),
+    'lg': (36, 38),
+    'md': (24, 26),
+    'sm': (18, 20),
+    'xs': (14, 16),
 ), $user-font-sizes);
 
 // Breakpoints

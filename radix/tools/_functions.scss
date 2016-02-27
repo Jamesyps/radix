@@ -82,11 +82,31 @@
 /// @access public
 /// @since 1.0.0
 @function font-stack($key: 'default') {
-    @if not map-has-key($radix-colours, $key) {
+    @if not map-has-key($radix-font-stack, $key) {
         @error 'No font stack exists with the key: #{$key}';
     }
 
     @return map-get($radix-font-stack, $key);
+}
+
+@function font-size($key: 'default') {
+    @if not map-has-key($radix-font-sizes, $key) {
+        @error 'No font size exists with the key: #{$key}';
+    }
+
+    $font-size: nth(map-get($radix-font-sizes, $key), 1);
+
+    @return rem($font-size);
+}
+
+@function line-height($key: 'default') {
+    @if not map-has-key($radix-font-sizes, $key) {
+        @error 'No font size exists with the key: #{$key}';
+    }
+
+    $line-height: nth(map-get($radix-font-sizes, $key), 2);
+
+    @return rem($line-height);
 }
 
 /// Breakpoint
@@ -115,4 +135,10 @@
 /// @since 1.0.0
 @function column-width($span) {
     @return ($span / $radix-gs-columns) * 100%;
+}
+
+@function rem($value) {
+    $result: ($value / 16);
+
+    @return #{$result}rem;
 }
