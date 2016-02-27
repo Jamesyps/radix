@@ -47,7 +47,7 @@
 
     .#{$radix-namespace}-item {
         flex: 1;
-        padding: 10px;
+        padding: $radix-gs-gutter / 2;
 
         &[class *= '-span-'] {
             flex: none;

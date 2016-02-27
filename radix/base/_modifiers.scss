@@ -1,0 +1,11 @@
+@if $radix-css-colours {
+    @each $class, $value in $radix-colours {
+        .\--bg-#{$class} {
+            background-color: $value;
+        }
+
+        .\--clr-#{$class} {
+            color: $value;
+        }
+    }
+}

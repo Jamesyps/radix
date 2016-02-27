@@ -26,7 +26,7 @@
 
         > * {
             flex: none;
-            width: (1 / $radix-gs-columns) * 100%;
+            width: column-width(1);
         }
     }
 

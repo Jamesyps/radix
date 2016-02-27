@@ -8,9 +8,14 @@ $user-breakpoints: () !default;
 
 // Radix options
 $radix-namespace: 'rdx' !default;
+
+// Grid options
 $radix-gs-columns: 12 !default;
 $radix-gs-gutter: 20px !default;
+
+// CSS options
 $radix-css-grid: true !default;
+$radix-css-colours: true !default;
 
 // Default colour-scheme
 $radix-colours: merge((

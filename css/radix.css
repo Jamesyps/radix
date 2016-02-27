@@ -338,4 +338,52 @@ input[type=button] {
   width: 100%;
 }
 
+.\--bg-default {
+  background-color: #ECF0F1;
+}
+
+.\--clr-default {
+  color: #ECF0F1;
+}
+
+.\--bg-primary {
+  background-color: #3498DB;
+}
+
+.\--clr-primary {
+  color: #3498DB;
+}
+
+.\--bg-secondary {
+  background-color: #34495E;
+}
+
+.\--clr-secondary {
+  color: #34495E;
+}
+
+.\--bg-success {
+  background-color: #63B75D;
+}
+
+.\--clr-success {
+  color: #63B75D;
+}
+
+.\--bg-error {
+  background-color: #EF2F2A;
+}
+
+.\--clr-error {
+  color: #EF2F2A;
+}
+
+.\--bg-notice {
+  background-color: #F1C40E;
+}
+
+.\--clr-notice {
+  color: #F1C40E;
+}
+
 /*# sourceMappingURL=radix.css.map */
