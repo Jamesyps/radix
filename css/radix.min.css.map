@@ -1,6 +1,6 @@
 {
 	"version": 3,
-	"file": "radix.css",
+	"file": "radix.min.css",
 	"sources": [
 		"../radix.scss",
 		"../radix/tools/_tools.scss",
