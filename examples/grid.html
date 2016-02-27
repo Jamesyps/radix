@@ -1,0 +1,161 @@
+<!DOCTYPE HTML>
+
+<html>
+
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>Radix Grid</title>
+        <link href="../css/radix.css" rel="stylesheet" />
+
+        <style>
+            .example-item {
+                border-radius: 3px;
+                background: #3498DB;
+                min-height: 50px;
+                text-align: center;
+                line-height: 50px;
+                font-size: 18px;
+                color: #FFF;
+            }
+
+            .rdx-item:nth-child(2n) .example-item {
+                background: #34495E;
+            }
+
+            .rdx-item:nth-child(3n) .example-item {
+                background: #63B75D;
+            }
+
+            .rdx-item:nth-child(4n) .example-item {
+                background: #EF2F2A;
+            }
+
+            .rdx-item:nth-child(5n) .example-item {
+                background: #F1C40E;
+            }
+        </style>
+    </head>
+
+    <body>
+
+        <h1>Grid</h1>
+        <div class="rdx-grid">
+            <div class="rdx-item">
+                <div class="example-item">1</div>
+            </div>
+            <div class="rdx-item">
+                <div class="example-item">2</div>
+            </div>
+            <div class="rdx-item">
+                <div class="example-item">3</div>
+            </div>
+            <div class="rdx-item">
+                <div class="example-item">4</div>
+            </div>
+            <div class="rdx-item">
+                <div class="example-item">5</div>
+            </div>
+            <div class="rdx-item">
+                <div class="example-item">6</div>
+            </div>
+            <div class="rdx-item">
+                <div class="example-item">7</div>
+            </div>
+            <div class="rdx-item">
+                <div class="example-item">8</div>
+            </div>
+            <div class="rdx-item">
+                <div class="example-item">9</div>
+            </div>
+            <div class="rdx-item">
+                <div class="example-item">10</div>
+            </div>
+            <div class="rdx-item">
+                <div class="example-item">11</div>
+            </div>
+            <div class="rdx-item">
+                <div class="example-item">12</div>
+            </div>
+        </div>
+
+        <h1>Grid Auto</h1>
+        <div class="rdx-grid --auto">
+            <div class="rdx-item">
+                <div class="example-item">1</div>
+            </div>
+            <div class="rdx-item">
+                <div class="example-item">2</div>
+            </div>
+            <div class="rdx-item">
+                <div class="example-item">3</div>
+            </div>
+            <div class="rdx-item">
+                <div class="example-item">4</div>
+            </div>
+            <div class="rdx-item">
+                <div class="example-item">5</div>
+            </div>
+            <div class="rdx-item">
+                <div class="example-item">6</div>
+            </div>
+            <div class="rdx-item">
+                <div class="example-item">7</div>
+            </div>
+            <div class="rdx-item">
+                <div class="example-item">8</div>
+            </div>
+            <div class="rdx-item">
+                <div class="example-item">9</div>
+            </div>
+            <div class="rdx-item">
+                <div class="example-item">10</div>
+            </div>
+            <div class="rdx-item">
+                <div class="example-item">11</div>
+            </div>
+            <div class="rdx-item">
+                <div class="example-item">12</div>
+            </div>
+            <div class="rdx-item">
+                <div class="example-item">13</div>
+            </div>
+            <div class="rdx-item">
+                <div class="example-item">14</div>
+            </div>
+            <div class="rdx-item">
+                <div class="example-item">15</div>
+            </div>
+        </div>
+
+        <h1>Spans</h1>
+        <div class="rdx-grid">
+            <div class="rdx-item --span-8">
+                <div class="example-item">Span 8</div>
+            </div>
+            <div class="rdx-item --span-2">
+                <div class="example-item">Span 2</div>
+            </div>
+            <div class="rdx-item">
+                <div class="example-item">Auto</div>
+            </div>
+            <div class="rdx-item">
+                <div class="example-item">Auto</div>
+            </div>
+        </div>
+
+        <h1>Offsets</h1>
+        <div class="rdx-grid">
+            <div class="rdx-item --offset-4">
+                <div class="example-item">Offset 4</div>
+            </div>
+            <div class="rdx-item --span-2">
+                <div class="example-item">Span 2</div>
+            </div>
+            <div class="rdx-item --span-2">
+                <div class="example-item">Span 2</div>
+            </div>
+        </div>
+
+    </body>
+
+</html>

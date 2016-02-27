@@ -1,34 +1,37 @@
-.#{$radix-namespace} {
-    &-container {
-        display: flex;
-    }
+.#{$radix-namespace}-grid {
+    display: flex;
 
-    &.is-stack {
+    &.\--stack {
         flex-direction: column;
     }
 
-    &.is-reverse:not(#{&}-stack) {
+    &.\--reverse:not(.\--stack) {
         flex-direction: row-reverse;
     }
 
-    &.is-reverse {
+    &.\--reverse {
         flex-direction: column-reverse;
     }
 
-    &.is-center {
+    &.\--center {
         justify-content: center;
     }
 
-    &.is-vcenter {
+    &.\--vcenter {
         align-items: center;
     }
 
-    &.is-auto {
+    &.\--auto {
         flex-wrap: wrap;
+
+        > .#{$radix-namespace}-item {
+            flex: none;
+            width: (1 / $radix-gs-columns) * 100%;
+        }
     }
 
-    &.is-flush {
-        > .rdx-item {
+    &.\--flush {
+        > .#{$radix-namespace}-item {
             margin: 0;
             padding: 0;
         }
@@ -44,8 +47,12 @@
     }
 
     @for $i from 1 through $radix-gs-columns {
-        .#{$radix-namespace}-container &-span-#{$i} {
+        .#{$radix-namespace}-grid &.\--span-#{$i} {
             width: ($i / $radix-gs-columns) * 100%;
+        }
+
+        .#{$radix-namespace}-grid &.\--offset-#{$i} {
+            margin-left: ($i / $radix-gs-columns) * 100%;
         }
     }
 }
