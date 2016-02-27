@@ -1,0 +1,11 @@
+.container {
+    position: relative;
+    margin: 0 auto;
+
+    width: $radix-fluid-width;
+    max-width: $radix-centered-width;
+
+    &.\--fluid {
+        max-width: none;
+    }
+}

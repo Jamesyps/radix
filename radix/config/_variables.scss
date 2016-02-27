@@ -13,6 +13,10 @@ $radix-namespace: 'rdx' !default;
 $radix-gs-columns: 12 !default;
 $radix-gs-gutter: 20px !default;
 
+// Container options
+$radix-centered-width: 1280px;
+$radix-fluid-width: 90%;
+
 // CSS options
 $radix-css-grid: true !default;
 $radix-css-colours: true !default;
