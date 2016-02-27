@@ -4,10 +4,13 @@
 $user-colours: () !default;
 $user-font-stack: () !default;
 $user-font-sizes: () !default;
+$user-breakpoints: () !default;
 
+// Radix options
 $radix-namespace: 'rdx' !default;
-$radix-gs-columns: 12;
-$radix-gs-gutter: 20px;
+$radix-gs-columns: 12 !default;
+$radix-gs-gutter: 20px !default;
+$radix-css-grid: true !default;
 
 // Default colour-scheme
 $radix-colours: merge((
@@ -46,3 +49,12 @@ $radix-font-sizes: merge((
     'sm': (1.8, 2.0),
     'xs': (1.4, 1.6),
 ), $user-font-sizes);
+
+// Breakpoints
+$radix-breakpoints: merge((
+    'xl': 76em,
+    'lg': 63em,
+    'md': 49em,
+    'sm': 35em,
+    'xs': 24em
+), $user-breakpoints);

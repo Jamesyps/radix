@@ -1,58 +1,60 @@
-.#{$radix-namespace}-grid {
-    display: flex;
+@if $radix-css-grid {
+    .#{$radix-namespace}-grid {
+        display: flex;
 
-    &.\--stack {
-        flex-direction: column;
+        &.\--stack {
+            flex-direction: column;
+        }
+
+        &.\--reverse:not(.\--stack) {
+            flex-direction: row-reverse;
+        }
+
+        &.\--reverse {
+            flex-direction: column-reverse;
+        }
+
+        &.\--center {
+            justify-content: center;
+        }
+
+        &.\--vcenter {
+            align-items: center;
+        }
+
+        &.\--auto {
+            flex-wrap: wrap;
+
+            > .#{$radix-namespace}-item {
+                flex: none;
+                width: (1 / $radix-gs-columns) * 100%;
+            }
+        }
+
+        &.\--flush {
+            > .#{$radix-namespace}-item {
+                margin: 0;
+                padding: 0;
+            }
+        }
     }
 
-    &.\--reverse:not(.\--stack) {
-        flex-direction: row-reverse;
-    }
+    .#{$radix-namespace}-item {
+        flex: 1;
+        padding: 10px;
 
-    &.\--reverse {
-        flex-direction: column-reverse;
-    }
-
-    &.\--center {
-        justify-content: center;
-    }
-
-    &.\--vcenter {
-        align-items: center;
-    }
-
-    &.\--auto {
-        flex-wrap: wrap;
-
-        > .#{$radix-namespace}-item {
+        &[class *= '-span-'] {
             flex: none;
-            width: (1 / $radix-gs-columns) * 100%;
-        }
-    }
-
-    &.\--flush {
-        > .#{$radix-namespace}-item {
-            margin: 0;
-            padding: 0;
-        }
-    }
-}
-
-.#{$radix-namespace}-item {
-    flex: 1;
-    padding: 10px;
-
-    &[class *= '-span-'] {
-        flex: none;
-    }
-
-    @for $i from 1 through $radix-gs-columns {
-        .#{$radix-namespace}-grid &.\--span-#{$i} {
-            width: ($i / $radix-gs-columns) * 100%;
         }
 
-        .#{$radix-namespace}-grid &.\--offset-#{$i} {
-            margin-left: ($i / $radix-gs-columns) * 100%;
+        @for $i from 1 through $radix-gs-columns {
+            .#{$radix-namespace}-grid &.\--span-#{$i} {
+                width: ($i / $radix-gs-columns) * 100%;
+            }
+
+            .#{$radix-namespace}-grid &.\--offset-#{$i} {
+                margin-left: ($i / $radix-gs-columns) * 100%;
+            }
         }
     }
 }
