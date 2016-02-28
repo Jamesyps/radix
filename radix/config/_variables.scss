@@ -4,6 +4,7 @@
 $user-colours: () !default;
 $user-font-stack: () !default;
 $user-font-sizes: () !default;
+$user-font-weights: () !default;
 $user-breakpoints: () !default;
 
 // Radix options
@@ -60,6 +61,15 @@ $radix-font-sizes: merge((
     'sm': (18, 20),
     'xs': (14, 16),
 ), $user-font-sizes);
+
+$radix-font-weights: merge((
+    'hairline': 100,
+    'light': 300,
+    'regular': 400,
+    'semibold': 600,
+    'bold': 700,
+    'black': 900
+), $user-font-weights);
 
 // Breakpoints
 $radix-breakpoints: merge((

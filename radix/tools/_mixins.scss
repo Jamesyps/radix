@@ -208,3 +208,15 @@
     font-size: font-size($key);
     line-height: line-height($key);
 }
+
+/// Font Weight
+/// Returns a font-weight property
+///
+/// @param {string} $key [regular] - the font-weight key / label
+/// @output font-weight
+///
+/// @access public
+/// @since 1.0.0
+@mixin rdx-font-weight($key: 'regular') {
+    font-weight: font-weight($key);
+}

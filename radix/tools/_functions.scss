@@ -107,6 +107,22 @@
     @return rem($font-size);
 }
 
+/// Font Weight
+/// Returns a font weighting by key
+///
+/// @param {string} $key [regular] - the key / label of the font weight
+/// @return {integer} - the font weight value
+///
+/// @access public
+/// @since 1.0.0
+@function font-weight($key: 'regular') {
+    @if not map-has-key($radix-font-weights, $key) {
+        @error 'No font weighting exists with the key: #{$key}';
+    }
+
+    @return map-get($radix-font-weights, $key);
+}
+
 /// Line height
 /// Returns a line-height by key
 ///

@@ -12,8 +12,14 @@
 
 @if $radix-css-fonts {
     @each $key in map-keys($radix-font-sizes) {
-        .\--text-#{$key} {
+        .\--text-size-#{$key} {
             @include rdx-font-size($key);
+        }
+    }
+
+    @each $key in map-keys($radix-font-weights) {
+        .\--text-weight-#{$key} {
+            @include rdx-font-weight($key);
         }
     }
 }
@@ -22,6 +28,12 @@
     @each $key in map-keys($radix-breakpoints) {
         .\--hide-#{$key} {
             @include rdx-mq-from($key) {
+                display: none !important;
+            }
+        }
+
+        .\--show-#{$key} {
+            @include rdx-mq-until($key) {
                 display: none !important;
             }
         }

@@ -369,6 +369,54 @@ textarea {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
 }
 
+code,
+pre {
+  -moz-osx-font-smoothing: auto;
+  -webkit-font-smoothing: auto;
+  font-family: monospace;
+  line-height: 1.25;
+}
+
+a {
+  color: #3498DB;
+}
+
+a:hover, a:active {
+  color: #2772a4;
+}
+
+hr {
+  border-top-color: #e0e4e5;
+  margin-top: 20px;
+}
+
+img {
+  max-width: 100%;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  vertical-align: baseline;
+}
+
+small {
+  font-size: 0.875rem;
+  line-height: 1rem;
+}
+
+strong {
+  font-weight: 700;
+}
+
+article,
+aside,
+figure,
+footer,
+header,
+section {
+  display: block;
+}
+
 .\--bg-default {
   background-color: #ECF0F1;
 }
@@ -417,38 +465,68 @@ textarea {
   color: #F1C40E;
 }
 
-.\--text-default {
+.\--text-size-default {
   font-size: 0.9375rem;
   line-height: 1.125rem;
 }
 
-.\--text-xl {
+.\--text-size-xl {
   font-size: 3rem;
   line-height: 3.25rem;
 }
 
-.\--text-lg {
+.\--text-size-lg {
   font-size: 2.25rem;
   line-height: 2.375rem;
 }
 
-.\--text-md {
+.\--text-size-md {
   font-size: 1.5rem;
   line-height: 1.625rem;
 }
 
-.\--text-sm {
+.\--text-size-sm {
   font-size: 1.125rem;
   line-height: 1.25rem;
 }
 
-.\--text-xs {
+.\--text-size-xs {
   font-size: 0.875rem;
   line-height: 1rem;
 }
 
+.\--text-weight-hairline {
+  font-weight: 100;
+}
+
+.\--text-weight-light {
+  font-weight: 300;
+}
+
+.\--text-weight-regular {
+  font-weight: 400;
+}
+
+.\--text-weight-semibold {
+  font-weight: 600;
+}
+
+.\--text-weight-bold {
+  font-weight: 700;
+}
+
+.\--text-weight-black {
+  font-weight: 900;
+}
+
 @media screen and (min-width: 86em) {
   .\--hide-xl {
+    display: none !important;
+  }
+}
+
+@media screen and (max-width: 85.99em) {
+  .\--show-xl {
     display: none !important;
   }
 }
@@ -459,8 +537,20 @@ textarea {
   }
 }
 
+@media screen and (max-width: 72.99em) {
+  .\--show-lg {
+    display: none !important;
+  }
+}
+
 @media screen and (min-width: 59em) {
   .\--hide-md {
+    display: none !important;
+  }
+}
+
+@media screen and (max-width: 58.99em) {
+  .\--show-md {
     display: none !important;
   }
 }
@@ -471,8 +561,20 @@ textarea {
   }
 }
 
+@media screen and (max-width: 44.99em) {
+  .\--show-sm {
+    display: none !important;
+  }
+}
+
 @media screen and (min-width: 34em) {
   .\--hide-xs {
+    display: none !important;
+  }
+}
+
+@media screen and (max-width: 33.99em) {
+  .\--show-xs {
     display: none !important;
   }
 }
