@@ -3,7 +3,6 @@
 /// @group Mixins
 ////
 
-/// Grid
 /// Generates grid code for a containing element. Useful if users do not wish to use the CSS grid classes
 /// in their markup.
 ///
@@ -14,8 +13,21 @@
 /// @param {bool} $stack - Display items in a column rather than horizontally
 /// @param {bool} $vcenter - Vertically center items in grid
 ///
+/// @example - scss Basic Usage
+///     .grid-row
+///        @include rdx-grid($auto: true);
+///     }
+///
+/// @example - css Output
+///     .grid-row
+///        display: flex;
+///        flex-wrap: wrap;
+///        > * {
+///            flex: none;
+///        }
+///     }
+///
 /// @outputs Outputs flexbox CSS properties for generating the Radix grid system
-/// @access public
 /// @since 1.0.0
 @mixin rdx-grid($auto: false, $center: false, $flush: false, $reverse: false, $stack: false, $vcenter: false) {
     display: flex;
@@ -56,37 +68,66 @@
     }
 }
 
-/// Span
 /// Sets the span width for an element not using the CSS grid classes
 ///
 /// @output flex configuration and a width property
 ///
-/// @access public
+/// @example - scss Basic Usage
+///     .grid-item {
+///        @include rdx-span(4);
+///     }
+///
+/// @example - css Output
+///     .grid-item {
+///        flex: 0;
+///        width: 33.3333%;
+///     }
+///
 /// @since 1.0.0
 @mixin rdx-span($span) {
     flex: 0;
     width: column-width($span);
 }
 
-/// Offset
 /// Sets the offset for an element not using the CSS grid classes
 ///
 /// @output margin-left value
 ///
-/// @access public
+/// @example - scss Basic Usage
+///     .grid-item {
+///        @include rdx-offset(4);
+///     }
+///
+/// @example - css Output
+///     .grid-item {
+///        margin-left: 33.3333%;
+///     }
+///
 /// @since 1.0.0
 @mixin rdx-offset($span) {
     margin-left: column-width($span);
 }
 
-/// Media Query From
-/// Output a media query for sizes greater than the given breakpoint
+/// Outputs a media query for sizes greater than the given breakpoint
 ///
 /// @param {string} $key - the name of the breakpoint to use
 /// @content the contents of the media query block
 /// @output a min-width media query
 ///
-/// @access public
+/// @example - scss Basic Usage
+///     @include rdx-mq-from('md') {
+///        .item {
+///            display: none;
+///        }
+///     }
+///
+/// @example - css Output
+///     @media screen and (min-width: 59em) {
+///        .item {
+///            display: none;
+///        }
+///     }
+///
 /// @since 1.0.0
 @mixin rdx-mq-from($key) {
     @media screen and (min-width: breakpoint($key)) {
@@ -94,14 +135,26 @@
     }
 }
 
-/// Media Query Until
-/// Output a media query for sizes up-to the the given breakpoint size
+/// Outputs a media query for sizes up-to the the given breakpoint size
 ///
 /// @param {string} $key - the name of the breakpoint to use
 /// @content the contents of the media query block
 /// @output a max-width media query
 ///
-/// @access public
+/// @example - scss Basic Usage
+///     @include rdx-mq-until('md') {
+///        .item {
+///            width: 100%;
+///        }
+///     }
+///
+/// @example - css Output
+///     @media screen and (max-width: 58.99em) {
+///        .item {
+///            width: 100%;
+///        }
+///     }
+///
 /// @since 1.0.0
 @mixin rdx-mq-until($key) {
     @media screen and (max-width: breakpoint($key) - 0.01) {
@@ -109,15 +162,27 @@
     }
 }
 
-/// Media Query Between
-/// Output a book-ended media query for targeting between two breakpoints
+/// Outputs a book-ended media query for targeting between two breakpoints
 ///
 /// @param {string} $min - the name of the smaller breakpoint
 /// @param {string} $max - the name of the larger breakpoint
 /// @content the contents of the media query block
 /// @output a min-width + max-width media query
 ///
-/// @access public
+/// @example - scss Basic Usage
+///     @include rdx-mq-between('sm', 'lg') {
+///        .item {
+///            background: red;
+///        }
+///     }
+///
+/// @example - css Output
+///     @media screen and (max-width: 45em) and (max-width: 73em) {
+///        .item {
+///            background: red;
+///        }
+///     }
+///
 /// @since 1.0.0
 @mixin rdx-mq-between($min, $max) {
     @media screen and (min-width: breakpoint($min)) and (max-width: breakpoint($max)) {
@@ -125,13 +190,25 @@
     }
 }
 
-/// Media Query XL
 /// Helper mixin for outputting the media query of largest breakpoint size
 ///
 /// @content the contents of the media query block
 /// @output a min-width media query
 ///
-/// @access public
+/// @example - scss Basic Usage
+///     @include rdx-mq-xl() {
+///        .item {
+///            display: none;
+///        }
+///     }
+///
+/// @example - css Output
+///     @media screen and (min-width: 86em) {
+///        .item {
+///            display: none;
+///        }
+///     }
+///
 /// @since 1.0.0
 @mixin rdx-mq-xl() {
     @include rdx-mq-from('xl') {
@@ -139,13 +216,25 @@
     }
 }
 
-/// Media Query LG
 /// Helper mixin for outputting the media query up to the second-largest breakpoint size
 ///
 /// @content the contents of the media query block
 /// @output a max-width media query
 ///
-/// @access public
+/// @example - scss Basic Usage
+///     @include rdx-mq-lg() {
+///        .item {
+///            display: none;
+///        }
+///     }
+///
+/// @example - css Output
+///     @media screen and (min-width: 73em) {
+///        .item {
+///            display: none;
+///        }
+///     }
+///
 /// @since 1.0.0
 @mixin rdx-mq-lg() {
     @include rdx-mq-from('lg') {
@@ -153,13 +242,25 @@
     }
 }
 
-/// Media Query MD
 /// Helper mixin for outputting the media query up to the medium breakpoint size
 ///
 /// @content the contents of the media query block
 /// @output a max-width media query
 ///
-/// @access public
+/// @example - scss Basic Usage
+///     @include rdx-mq-md() {
+///        .item {
+///            display: none;
+///        }
+///     }
+///
+/// @example - css Output
+///     @media screen and (min-width: 59em) {
+///        .item {
+///            display: none;
+///        }
+///     }
+///
 /// @since 1.0.0
 @mixin rdx-mq-md() {
     @include rdx-mq-from('md') {
@@ -167,13 +268,25 @@
     }
 }
 
-/// Media Query SM
 /// Helper mixin for outputting the media query up to the smaller breakpoint size
 ///
 /// @content the contents of the media query block
 /// @output a max-width media query
 ///
-/// @access public
+/// @example - scss Basic Usage
+///     @include rdx-mq-sm() {
+///        .item {
+///            display: none;
+///        }
+///     }
+///
+/// @example - css Output
+///     @media screen and (min-width: 45em) {
+///        .item {
+///            display: none;
+///        }
+///     }
+///
 /// @since 1.0.0
 @mixin rdx-mq-sm() {
     @include rdx-mq-from('sm') {
@@ -181,40 +294,69 @@
     }
 }
 
-/// Media Query MD
 /// Helper mixin for outputting the media query up to the smallest breakpoint size
 ///
 /// @content the contents of the media query block
 /// @output a max-width media query
 ///
-/// @access public
+/// @example - scss Basic Usage
+///     @include rdx-mq-xs() {
+///        .item {
+///            display: none;
+///        }
+///     }
+///
+/// @example - css Output
+///     @media screen and (min-width: 34em) {
+///        .item {
+///            display: none;
+///        }
+///     }
+///
 /// @since 1.0.0
 @mixin rdx-mq-xs() {
-    @include rdx-mq-until('sm') {
+    @include rdx-mq-from('sm') {
         @content;
     }
 }
 
-/// Font Size
 /// Returns a font-size / line-height paring from system config by key
 ///
 /// @param {string} $key [default] - the font-size key / label
 /// @output font-size / line-height in rems
 ///
-/// @access public
+/// @example - scss Basic Usage
+///     .headline {
+///        @include rdx-font-size('xl');
+///     }
+///
+/// @example - css Output
+///     .headline {
+///        font-size: 3rem;
+///        line-height: 3.25rem;
+///     }
+///
 /// @since 1.0.0
 @mixin rdx-font-size($key: 'default') {
     font-size: font-size($key);
     line-height: line-height($key);
 }
 
-/// Font Weight
 /// Returns a font-weight property
 ///
 /// @param {string} $key [regular] - the font-weight key / label
 /// @output font-weight
 ///
-/// @access public
+/// @example - scss Basic Usage
+///     .headline--thin {
+///        @include rdx-font-weight('hairline');
+///     }
+///
+/// @example - css Output
+///     .headline--thin {
+///        font-weight: 100;
+///     }
+///
 /// @since 1.0.0
 @mixin rdx-font-weight($key: 'regular') {
     font-weight: font-weight($key);
