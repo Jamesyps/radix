@@ -89,6 +89,14 @@
     @return map-get($radix-font-stack, $key);
 }
 
+/// Font Size
+/// Returns a font-size by key
+///
+/// @param {string} $key [default] - the key / label of the font size group
+/// @return {integer} - a rem value of the size
+///
+/// @access public
+/// @since 1.0.0
 @function font-size($key: 'default') {
     @if not map-has-key($radix-font-sizes, $key) {
         @error 'No font size exists with the key: #{$key}';
@@ -99,6 +107,14 @@
     @return rem($font-size);
 }
 
+/// Line height
+/// Returns a line-height by key
+///
+/// @param {string} $key [default] - the key / label of the font size group
+/// @return {integer} - a rem value of the line height
+///
+/// @access public
+/// @since 1.0.0
 @function line-height($key: 'default') {
     @if not map-has-key($radix-font-sizes, $key) {
         @error 'No font size exists with the key: #{$key}';
@@ -137,6 +153,14 @@
     @return ($span / $radix-gs-columns) * 100%;
 }
 
+/// Rem
+/// Returns a rem value conversion for a pixel sizing
+///
+/// @param {float} $value - the pixel value to be converted
+/// @return {float} - the rem conversion value
+///
+/// @access public
+/// @since 1.0.0
 @function rem($value) {
     $result: ($value / 16);
 

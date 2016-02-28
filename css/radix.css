@@ -369,11 +369,6 @@ textarea {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
 }
 
-.example-item {
-  font-size: 1.125rem;
-  line-height: 1.25rem;
-}
-
 .\--bg-default {
   background-color: #ECF0F1;
 }

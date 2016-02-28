@@ -196,6 +196,14 @@
     }
 }
 
+/// Font Size
+/// Returns a font-size / line-height paring from system config by key
+///
+/// @param {string} $key [default] - the font-size key / label
+/// @output font-size / line-height in rems
+///
+/// @access public
+/// @since 1.0.0
 @mixin rdx-font-size($key: 'default') {
     font-size: font-size($key);
     line-height: line-height($key);
