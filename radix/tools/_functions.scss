@@ -98,7 +98,13 @@
 /// Returns a font stack by key
 ///
 /// @param {string} $key [default] - the key / label of the font stack
-/// @return {map} - a map of the font stack
+/// @return {list} - a list of the font-family values
+///
+/// @example - scss Basic Usage
+///     font-family: font-stack('body');
+///
+/// @example - css Output
+///     background-color: Hevetica, Arial, sans-serif;
 ///
 /// @since 1.0.0
 @function font-stack($key: 'default') {
@@ -113,7 +119,13 @@
 /// Returns a font-size by key
 ///
 /// @param {string} $key [default] - the key / label of the font size group
-/// @return {integer} - a rem value of the size
+/// @return {number} - a rem value of the size
+///
+/// @example - scss Basic Usage
+///     font-size: font-size('xl');
+///
+/// @example - css Output
+///     font-size: 3rem;
 ///
 /// @since 1.0.0
 @function font-size($key: 'default') {
@@ -130,7 +142,13 @@
 /// Returns a font weighting by key
 ///
 /// @param {string} $key [regular] - the key / label of the font weight
-/// @return {integer} - the font weight value
+/// @return {number} - the font weight value
+///
+/// @example - scss Basic Usage
+///     font-weight: font-weight('semibold');
+///
+/// @example - css Output
+///     font-weight: 600;
 ///
 /// @since 1.0.0
 @function font-weight($key: 'regular') {
@@ -145,7 +163,13 @@
 /// Returns a line-height by key
 ///
 /// @param {string} $key [default] - the key / label of the font size group
-/// @return {integer} - a rem value of the line height
+/// @return {number} - a rem value of the line height
+///
+/// @example - scss Basic Usage
+///     line-height: line-height('xl');
+///
+/// @example - css Output
+///     line-height: 3.25rem;
 ///
 /// @since 1.0.0
 @function line-height($key: 'default') {
@@ -162,7 +186,17 @@
 /// Returns a breakpoint by key
 ///
 /// @param {string} $key - the key / label of the breakpoint
-/// @return {string} - a width value
+/// @return {number} - a width value
+///
+/// @example - scss Basic Usage
+///     @media screen and (max-width: breakpoint('xl')) {
+///        // ...
+///     }
+///
+/// @example - css Output
+///     @media screen and (max-width: 73em) {
+///        // ...
+///     }
 ///
 /// @access private
 /// @since 1.0.0
@@ -178,7 +212,13 @@
 /// Calculates the width value for a span of columns
 ///
 /// @param {string} $span - the number of columns to span
-/// @return {float} - a width value
+/// @return {number} - a width value
+///
+/// @example - scss Basic Usage
+///     width: column-width(5);
+///
+/// @example - css Output
+///     width: 41.66667%;
 ///
 /// @access private
 /// @since 1.0.0
@@ -189,12 +229,17 @@
 /// Rem
 /// Returns a rem value conversion for a pixel sizing
 ///
-/// @param {float} $value - the pixel value to be converted
-/// @return {float} - the rem conversion value
+/// @param {number} $value - the pixel value to be converted
+/// @return {number} - the rem conversion value
 ///
+/// @example - scss Basic Usage
+///     font-size: rem(32px)
+///
+/// @example - css Output
+///     font-size: 2.25rem;
+///
+/// @access private
 /// @since 1.0.0
 @function rem($value) {
-    $result: ($value / 16);
-
-    @return #{$result}rem;
+    @return #{($value / 16)}rem;
 }
