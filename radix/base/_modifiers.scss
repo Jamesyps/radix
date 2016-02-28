@@ -11,9 +11,19 @@
 }
 
 @if $radix-css-fonts {
-    @each $class, $value in $radix-font-sizes {
-        .\--text-#{$class} {
-            @include rdx-font-size($class);
+    @each $key in map-keys($radix-font-sizes) {
+        .\--text-#{$key} {
+            @include rdx-font-size($key);
+        }
+    }
+}
+
+@if $radix-css-breakpoints {
+    @each $key in map-keys($radix-breakpoints) {
+        .\--hide-#{$key} {
+            @include rdx-mq-from($key) {
+                display: none !important;
+            }
         }
     }
 }

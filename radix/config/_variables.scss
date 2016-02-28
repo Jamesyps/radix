@@ -21,6 +21,7 @@ $radix-fluid-width: 90% !default;
 $radix-css-grid: true !default;
 $radix-css-colours: true !default;
 $radix-css-fonts: true !default;
+$radix-css-breakpoints: true !default;
 
 // Default colour-scheme
 $radix-colours: merge((
@@ -62,9 +63,9 @@ $radix-font-sizes: merge((
 
 // Breakpoints
 $radix-breakpoints: merge((
-    'xl': 76em,
-    'lg': 63em,
-    'md': 49em,
-    'sm': 35em,
-    'xs': 24em
+    'xl': 86em,
+    'lg': 73em,
+    'md': 59em,
+    'sm': 45em,
+    'xs': 34em
 ), $user-breakpoints);
