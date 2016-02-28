@@ -8,8 +8,12 @@
             }
         }
 
-        &.\--center {
+        &.\--center-x {
             justify-content: center;
+        }
+
+        &.\--center-y {
+            align-items: center;
         }
 
         &.\--flush {
@@ -33,10 +37,6 @@
 
         &.\--stack {
             flex-direction: column;
-        }
-
-        &.\--vcenter {
-            align-items: center;
         }
 
         @include rdx-mq-sm {

@@ -7,11 +7,11 @@
 /// in their markup.
 ///
 /// @param {bool} $auto - Enables the auto-grid function where items will wrap
-/// @param {bool} $center - Horizontally centers items
+/// @param {bool} $center-x - Horizontally centers items
+/// @param {bool} $center-y - Vertically center items
 /// @param {bool} $flush -  Removes all spacing between items
 /// @param {bool} $reverse - Reveres the order of the items
 /// @param {bool} $stack - Display items in a column rather than horizontally
-/// @param {bool} $vcenter - Vertically center items in grid
 ///
 /// @example - scss Basic Usage
 ///     .grid-row
@@ -29,7 +29,7 @@
 ///
 /// @outputs Outputs flexbox CSS properties for generating the Radix grid system
 /// @since 1.0.0
-@mixin rdx-grid($auto: false, $center: false, $flush: false, $reverse: false, $stack: false, $vcenter: false) {
+@mixin rdx-grid($auto: false, $center-x: false, $center-y: false, $flush: false, $reverse: false, $stack: false) {
     display: flex;
 
     @if $auto {
@@ -40,8 +40,12 @@
         }
     }
 
-    @if $center {
+    @if $center-x {
         justify-content: center;
+    }
+
+    @if $center-y {
+        align-items: center;
     }
 
     @if $flush {
@@ -62,15 +66,9 @@
     @if $stack {
         flex-direction: column;
     }
-
-    @if $vcenter {
-        align-items: center;
-    }
 }
 
 /// Sets the span width for an element not using the CSS grid classes
-///
-/// @output flex configuration and a width property
 ///
 /// @example - scss Basic Usage
 ///     .grid-item {
@@ -91,8 +89,6 @@
 
 /// Sets the offset for an element not using the CSS grid classes
 ///
-/// @output margin-left value
-///
 /// @example - scss Basic Usage
 ///     .grid-item {
 ///        @include rdx-offset(4);
@@ -112,7 +108,6 @@
 ///
 /// @param {string} $key - the name of the breakpoint to use
 /// @content the contents of the media query block
-/// @output a min-width media query
 ///
 /// @example - scss Basic Usage
 ///     @include rdx-mq-from('md') {
@@ -139,7 +134,6 @@
 ///
 /// @param {string} $key - the name of the breakpoint to use
 /// @content the contents of the media query block
-/// @output a max-width media query
 ///
 /// @example - scss Basic Usage
 ///     @include rdx-mq-until('md') {
@@ -167,7 +161,6 @@
 /// @param {string} $min - the name of the smaller breakpoint
 /// @param {string} $max - the name of the larger breakpoint
 /// @content the contents of the media query block
-/// @output a min-width + max-width media query
 ///
 /// @example - scss Basic Usage
 ///     @include rdx-mq-between('sm', 'lg') {
@@ -193,7 +186,6 @@
 /// Helper mixin for outputting the media query of largest breakpoint size
 ///
 /// @content the contents of the media query block
-/// @output a min-width media query
 ///
 /// @example - scss Basic Usage
 ///     @include rdx-mq-xl() {
@@ -219,7 +211,6 @@
 /// Helper mixin for outputting the media query up to the second-largest breakpoint size
 ///
 /// @content the contents of the media query block
-/// @output a max-width media query
 ///
 /// @example - scss Basic Usage
 ///     @include rdx-mq-lg() {
@@ -245,7 +236,6 @@
 /// Helper mixin for outputting the media query up to the medium breakpoint size
 ///
 /// @content the contents of the media query block
-/// @output a max-width media query
 ///
 /// @example - scss Basic Usage
 ///     @include rdx-mq-md() {
@@ -271,7 +261,6 @@
 /// Helper mixin for outputting the media query up to the smaller breakpoint size
 ///
 /// @content the contents of the media query block
-/// @output a max-width media query
 ///
 /// @example - scss Basic Usage
 ///     @include rdx-mq-sm() {
@@ -297,7 +286,6 @@
 /// Helper mixin for outputting the media query up to the smallest breakpoint size
 ///
 /// @content the contents of the media query block
-/// @output a max-width media query
 ///
 /// @example - scss Basic Usage
 ///     @include rdx-mq-xs() {
@@ -323,7 +311,6 @@
 /// Returns a font-size / line-height paring from system config by key
 ///
 /// @param {string} $key [default] - the font-size key / label
-/// @output font-size / line-height in rems
 ///
 /// @example - scss Basic Usage
 ///     .headline {
@@ -345,7 +332,6 @@
 /// Returns a font-weight property
 ///
 /// @param {string} $key [regular] - the font-weight key / label
-/// @output font-weight
 ///
 /// @example - scss Basic Usage
 ///     .headline--thin {
@@ -360,4 +346,141 @@
 /// @since 1.0.0
 @mixin rdx-font-weight($key: 'regular') {
     font-weight: font-weight($key);
+}
+
+/// Clears floats inside the element
+///
+/// @example - scss Basic Usage
+///     .row {
+///        @include clearfix();
+///     }
+///
+/// @example - css Output
+///     .row:after {
+///        display: table;
+///        clear: both;
+///        content: ' ';
+///     }
+///
+/// @since 1.0.0
+@mixin rdx-clearfix() {
+    &:after {
+        display: table;
+        clear: both;
+        content: ' ';
+    }
+}
+
+/// Horizontally centers an element on screen
+///
+/// @param {string} $position [relative] - the position property the element should use
+///
+/// @example - scss Basic Usage
+///     .alert-box {
+///        @include rdx-center-x();
+///     }
+///
+/// @example - css Output
+///     .alert-box {
+///        position: relative;
+///        left: 50%;
+///        transform: translateX(-50%);
+///     }
+///
+/// @since 1.0.0
+@mixin rdx-center-x($position: 'relative') {
+    position: $position;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/// Vertically centers an element on screen
+///
+/// @param {string} $position [relative] - the position property the element should use
+///
+/// @example - scss Basic Usage
+///     .alert-box {
+///        @include rdx-center-y();
+///     }
+///
+/// @example - css Output
+///     .alert-box {
+///        position: relative;
+///        top: 50%;
+///        transform: translateY(-50%);
+///     }
+///
+/// @since 1.0.0
+@mixin rdx-center-y($position: 'relative') {
+    position: $position;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/// Positions an element over the containing element
+///
+/// @param {string} $position [absolute] - the position property the element should use
+/// @param {number} $offset [0] - the edge spacing of the overlaying element
+///
+/// @example - scss Basic Usage
+///     .confirm-dialogue {
+///        @include rdx-overlay();
+///     }
+///
+/// @example - css Output
+///     .confirm-dialogue {
+///        position: absolute;
+///        top: 0;
+///        right: 0;
+///        bottom: 0;
+///        left: 0;
+///     }
+///
+/// @since 1.0.0
+@mixin rdx-overlay($position: 'absolute', $offset: 0) {
+    position: $position;
+    top: $offset;
+    right: $offset;
+    bottom: $offset;
+    left: $offset;
+}
+
+/// Replaces the contents of an element with an image background
+///
+/// @param {string} $image - image path / object
+/// @param {number} $width - width of the background image
+/// @param {number} $height - height of the background image
+///
+/// @example - scss Basic Usage
+///     .close-btn {
+///        @include rdx-replace(url('../images/icons/close.png'), 16px, 16px);
+///     }
+///
+/// @example - css Output
+///     .close-btn {
+///        display: block;
+///        background: url('../images/icons/close.png') no-repeat 50% 50%;
+///        background-size: 16px 16px;
+///        width: 16px;
+///        height: 16px;
+///        text-indent: 100%;
+///        white-space: no-wrap;
+///        overflow: hidden;
+///        outline: none;
+///     }
+///
+/// @since 1.0.0
+@mixin rdx-replace($image, $width, $height) {
+    display: block;
+
+    background: $image no-repeat 50% 50%;
+    background-size: $width $height;
+
+    width: $width;
+    height: $height;
+
+    text-indent: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    outline: none;
 }
