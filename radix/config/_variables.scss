@@ -1,30 +1,84 @@
 @charset "utf-8";
 
-// User configurations
+////
+/// Configuration
+/// @group Config
+////
+
+/// User configurable colour scheme
+///
+/// @since 1.0.0
 $user-colours: () !default;
+
+/// User configurable font-family stack
+///
+/// @since 1.0.0
 $user-font-stack: () !default;
+
+/// User configurable font-size groups
+///
+/// @since 1.0.0
 $user-font-sizes: () !default;
+
+/// User configurable font weights
+///
+/// @since 1.0.0
 $user-font-weights: () !default;
+
+/// User configurable media query breakpoints
+///
+/// @since 1.0.0
 $user-breakpoints: () !default;
 
-// Radix options
+/// Defines the CSS namespace that framework generated CSS uses
+///
+/// @since 1.0.0
 $radix-namespace: 'rdx' !default;
 
-// Grid options
+/// Defines the number of columns in the grid. Used for width calculations on spans and offets
+///
+/// @since 1.0.0
 $radix-gs-columns: 12 !default;
+
+/// The spacing between items in the grid
+///
+/// @since 1.0.0
 $radix-gs-gutter: 20px !default;
 
-// Container options
-$radix-centered-width: 1280px !default;
-$radix-fluid-width: 90% !default;
+/// The maximum width the container can expand to unless is fluid
+///
+/// @since 1.0.0
+$radix-container-width: 1280px !default;
 
-// CSS options
+/// The internal spacing of the container content
+///
+/// @since 1.0.0
+$radix-container-padding: 5% !default;
+
+/// If true, the framework will output a CSS grid with helper classes rather than the user defining their own
+///
+/// @since 1.0.0
 $radix-css-grid: true !default;
+
+/// If true, the framework will output modifier classes for all defined colours
+///
+/// @since 1.0.0
 $radix-css-colours: true !default;
+
+/// If true, the framework will output modifier classes for all defined font sizes and weights
+///
+/// @since 1.0.0
 $radix-css-fonts: true !default;
+
+/// Enabling this will output media-query modifier classes for hiding / showing content at different widths
+///
+/// @since 1.0.0
 $radix-css-breakpoints: true !default;
 
-// Default colour-scheme
+/// The system default colour-scheme map that users can extend or modify. This should not be modified directly.
+///
+/// @access private
+/// @since 1.0.0
 $radix-colours: merge((
     'default': #ECF0F1,
     'primary': #3498DB,
@@ -34,7 +88,10 @@ $radix-colours: merge((
     'notice': #F1C40E
 ), $user-colours);
 
-// Default font stack
+/// The system default font-family stack that users can extend or modify. This should not be modified directly.
+///
+/// @access private
+/// @since 1.0.0
 $radix-font-stack: merge((
     'default': (
         -apple-system,
@@ -52,7 +109,10 @@ $radix-font-stack: merge((
     )
 ), $user-font-stack);
 
-// Default font sizes
+/// The system default font-size groups that users can extend or modify. This should not be modified directly.
+///
+/// @access private
+/// @since 1.0.0
 $radix-font-sizes: merge((
     'default': (15, 18),
     'xl': (48, 52),
@@ -62,6 +122,10 @@ $radix-font-sizes: merge((
     'xs': (14, 16),
 ), $user-font-sizes);
 
+/// The system default font-weight options that users can extend or modify. This should not be modified directly.
+///
+/// @access private
+/// @since 1.0.0
 $radix-font-weights: merge((
     'hairline': 100,
     'light': 300,
@@ -71,7 +135,10 @@ $radix-font-weights: merge((
     'black': 900
 ), $user-font-weights);
 
-// Breakpoints
+/// The system default breakpoints  that users can extend or modify. This should not be modified directly.
+///
+/// @access private
+/// @since 1.0.0
 $radix-breakpoints: merge((
     'xl': 86em,
     'lg': 73em,

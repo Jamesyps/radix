@@ -1,11 +1,13 @@
 .container {
     position: relative;
     margin: 0 auto;
+    padding: 0 $radix-container-padding;
 
-    width: $radix-fluid-width;
-    max-width: $radix-centered-width;
+    @include rdx-mq-from('lg') {
+        max-width: $radix-container-width;
 
-    &.\--fluid {
-        max-width: none;
+        &.\--fluid {
+            max-width: none;
+        }
     }
 }

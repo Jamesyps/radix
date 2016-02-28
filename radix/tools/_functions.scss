@@ -1,7 +1,6 @@
 ////
 /// Functions
 /// @group Functions
-/// @author James Wigger
 ////
 
 /// Merge
@@ -11,7 +10,9 @@
 /// @param {map} $extension - the extending properties map
 /// @return {map} - a combined map of default and extension values
 ///
-/// @access public
+/// @example
+///     $new-map: merge(('red': #F00), ('red': #F34036));
+///
 /// @since 1.0.0
 @function merge($default, $extension) {
     @return map-merge($default, $extension);
@@ -24,7 +25,12 @@
 /// @param {string} $key [default] - the key / label of the colour
 /// @return {string} - a colour value for the key
 ///
-/// @access public
+/// @example - scss Basic Usage
+///     background-color: colour('primary');
+///
+/// @example - css Output
+///     background-color: #3498DB;
+///
 /// @since 1.0.0
 @function colour($key: 'default') {
     @if not map-has-key($radix-colours, $key) {
@@ -38,10 +44,15 @@
 /// Returns a tinted version of a colour (mixed with white)
 ///
 /// @param {string} $key [default] - the key / label of the colour
-/// @param {int} $percentage - the amount to mix the colours
+/// @param {number} $percentage [25] - the amount to mix the colours
 /// @return {string} - a modified colour value for the key
 ///
-/// @access public
+/// @example - scss Basic Usage
+///     background-color: tint('primary');
+///
+/// @example - css Output
+///     background-color: #67B2E4;
+///
 /// @since 1.0.0
 @function tint($key: 'default', $percentage: 25) {
     @return mix(#FFF, colour($key), $percentage);
@@ -51,10 +62,15 @@
 /// Returns a shaded version of a colour (mixed with black)
 ///
 /// @param {string} $key [default] - the key / label of the colour
-/// @param {int} $percentage - the amount to mix the colours
+/// @param {number} $percentage [25] - the amount to mix the colours
 /// @return {string} - a modified colour value for the key
 ///
-/// @access public
+/// @example - scss Basic Usage
+///     background-color: shade('primary');
+///
+/// @example - css Output
+///     background-color: #2772A4;
+///
 /// @since 1.0.0
 @function shade($key: 'default', $percentage: 25) {
     @return mix(#000, colour($key), $percentage);
@@ -64,10 +80,15 @@
 /// Returns a transparent version of a colour (rgba)
 ///
 /// @param {string} $key [default] - the key / label of the colour
-/// @param {float} $amount - the opacity of the colour
+/// @param {number} $amount [0.5] - the opacity of the colour
 /// @return {string} - a modified colour value for the key in rgba format
 ///
-/// @access public
+/// @example - scss Basic Usage
+///     background-color: trans('primary');
+///
+/// @example - css Output
+///     background-color: rgba(52, 152, 219, 0.5);
+///
 /// @since 1.0.0
 @function trans($key: 'default', $amount: 0.5) {
     @return transparentize(colour($key), $amount);
@@ -79,7 +100,6 @@
 /// @param {string} $key [default] - the key / label of the font stack
 /// @return {map} - a map of the font stack
 ///
-/// @access public
 /// @since 1.0.0
 @function font-stack($key: 'default') {
     @if not map-has-key($radix-font-stack, $key) {
@@ -95,7 +115,6 @@
 /// @param {string} $key [default] - the key / label of the font size group
 /// @return {integer} - a rem value of the size
 ///
-/// @access public
 /// @since 1.0.0
 @function font-size($key: 'default') {
     @if not map-has-key($radix-font-sizes, $key) {
@@ -113,7 +132,6 @@
 /// @param {string} $key [regular] - the key / label of the font weight
 /// @return {integer} - the font weight value
 ///
-/// @access public
 /// @since 1.0.0
 @function font-weight($key: 'regular') {
     @if not map-has-key($radix-font-weights, $key) {
@@ -129,7 +147,6 @@
 /// @param {string} $key [default] - the key / label of the font size group
 /// @return {integer} - a rem value of the line height
 ///
-/// @access public
 /// @since 1.0.0
 @function line-height($key: 'default') {
     @if not map-has-key($radix-font-sizes, $key) {
@@ -147,7 +164,7 @@
 /// @param {string} $key - the key / label of the breakpoint
 /// @return {string} - a width value
 ///
-/// @access public
+/// @access private
 /// @since 1.0.0
 @function breakpoint($key) {
     @if not map-has-key($radix-breakpoints, $key) {
@@ -163,7 +180,7 @@
 /// @param {string} $span - the number of columns to span
 /// @return {float} - a width value
 ///
-/// @access public
+/// @access private
 /// @since 1.0.0
 @function column-width($span) {
     @return ($span / $radix-gs-columns) * 100%;
@@ -175,7 +192,6 @@
 /// @param {float} $value - the pixel value to be converted
 /// @return {float} - the rem conversion value
 ///
-/// @access public
 /// @since 1.0.0
 @function rem($value) {
     $result: ($value / 16);
