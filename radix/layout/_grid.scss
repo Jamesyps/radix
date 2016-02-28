@@ -39,7 +39,7 @@
             flex-direction: column;
         }
 
-        @include rdx-mq-sm {
+        @include rdx-mq-sm() {
             display: flex;
         }
     }
@@ -77,12 +77,24 @@
         }
 
         @for $i from 1 through $radix-gs-columns {
-            .#{$radix-namespace}-grid &.\--offset-#{$i} {
+            .#{$radix-namespace}-grid.\--force &.\--offset-#{$i} {
                 margin-left: column-width($i);
             }
 
-            .#{$radix-namespace}-grid &.\--span-#{$i} {
+            .#{$radix-namespace}-grid.\--force &.\--span-#{$i} {
                 width: column-width($i);
+            }
+        }
+
+        @include rdx-mq-sm() {
+            @for $i from 1 through $radix-gs-columns {
+                .#{$radix-namespace}-grid &.\--offset-#{$i} {
+                    margin-left: column-width($i);
+                }
+
+                .#{$radix-namespace}-grid &.\--span-#{$i} {
+                    width: column-width($i);
+                }
             }
         }
     }

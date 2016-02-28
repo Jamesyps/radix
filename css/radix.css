@@ -292,100 +292,175 @@ input[type=button] {
   width: 33.3333%;
 }
 
-.rdx-grid .rdx-item.\--offset-1 {
+.rdx-grid.\--force .rdx-item.\--offset-1 {
   margin-left: 8.33333%;
 }
 
-.rdx-grid .rdx-item.\--span-1 {
+.rdx-grid.\--force .rdx-item.\--span-1 {
   width: 8.33333%;
 }
 
-.rdx-grid .rdx-item.\--offset-2 {
+.rdx-grid.\--force .rdx-item.\--offset-2 {
   margin-left: 16.66667%;
 }
 
-.rdx-grid .rdx-item.\--span-2 {
+.rdx-grid.\--force .rdx-item.\--span-2 {
   width: 16.66667%;
 }
 
-.rdx-grid .rdx-item.\--offset-3 {
+.rdx-grid.\--force .rdx-item.\--offset-3 {
   margin-left: 25%;
 }
 
-.rdx-grid .rdx-item.\--span-3 {
+.rdx-grid.\--force .rdx-item.\--span-3 {
   width: 25%;
 }
 
-.rdx-grid .rdx-item.\--offset-4 {
+.rdx-grid.\--force .rdx-item.\--offset-4 {
   margin-left: 33.33333%;
 }
 
-.rdx-grid .rdx-item.\--span-4 {
+.rdx-grid.\--force .rdx-item.\--span-4 {
   width: 33.33333%;
 }
 
-.rdx-grid .rdx-item.\--offset-5 {
+.rdx-grid.\--force .rdx-item.\--offset-5 {
   margin-left: 41.66667%;
 }
 
-.rdx-grid .rdx-item.\--span-5 {
+.rdx-grid.\--force .rdx-item.\--span-5 {
   width: 41.66667%;
 }
 
-.rdx-grid .rdx-item.\--offset-6 {
+.rdx-grid.\--force .rdx-item.\--offset-6 {
   margin-left: 50%;
 }
 
-.rdx-grid .rdx-item.\--span-6 {
+.rdx-grid.\--force .rdx-item.\--span-6 {
   width: 50%;
 }
 
-.rdx-grid .rdx-item.\--offset-7 {
+.rdx-grid.\--force .rdx-item.\--offset-7 {
   margin-left: 58.33333%;
 }
 
-.rdx-grid .rdx-item.\--span-7 {
+.rdx-grid.\--force .rdx-item.\--span-7 {
   width: 58.33333%;
 }
 
-.rdx-grid .rdx-item.\--offset-8 {
+.rdx-grid.\--force .rdx-item.\--offset-8 {
   margin-left: 66.66667%;
 }
 
-.rdx-grid .rdx-item.\--span-8 {
+.rdx-grid.\--force .rdx-item.\--span-8 {
   width: 66.66667%;
 }
 
-.rdx-grid .rdx-item.\--offset-9 {
+.rdx-grid.\--force .rdx-item.\--offset-9 {
   margin-left: 75%;
 }
 
-.rdx-grid .rdx-item.\--span-9 {
+.rdx-grid.\--force .rdx-item.\--span-9 {
   width: 75%;
 }
 
-.rdx-grid .rdx-item.\--offset-10 {
+.rdx-grid.\--force .rdx-item.\--offset-10 {
   margin-left: 83.33333%;
 }
 
-.rdx-grid .rdx-item.\--span-10 {
+.rdx-grid.\--force .rdx-item.\--span-10 {
   width: 83.33333%;
 }
 
-.rdx-grid .rdx-item.\--offset-11 {
+.rdx-grid.\--force .rdx-item.\--offset-11 {
   margin-left: 91.66667%;
 }
 
-.rdx-grid .rdx-item.\--span-11 {
+.rdx-grid.\--force .rdx-item.\--span-11 {
   width: 91.66667%;
 }
 
-.rdx-grid .rdx-item.\--offset-12 {
+.rdx-grid.\--force .rdx-item.\--offset-12 {
   margin-left: 100%;
 }
 
-.rdx-grid .rdx-item.\--span-12 {
+.rdx-grid.\--force .rdx-item.\--span-12 {
   width: 100%;
+}
+
+@media screen and (min-width: 45em) {
+  .rdx-grid .rdx-item.\--offset-1 {
+    margin-left: 8.33333%;
+  }
+  .rdx-grid .rdx-item.\--span-1 {
+    width: 8.33333%;
+  }
+  .rdx-grid .rdx-item.\--offset-2 {
+    margin-left: 16.66667%;
+  }
+  .rdx-grid .rdx-item.\--span-2 {
+    width: 16.66667%;
+  }
+  .rdx-grid .rdx-item.\--offset-3 {
+    margin-left: 25%;
+  }
+  .rdx-grid .rdx-item.\--span-3 {
+    width: 25%;
+  }
+  .rdx-grid .rdx-item.\--offset-4 {
+    margin-left: 33.33333%;
+  }
+  .rdx-grid .rdx-item.\--span-4 {
+    width: 33.33333%;
+  }
+  .rdx-grid .rdx-item.\--offset-5 {
+    margin-left: 41.66667%;
+  }
+  .rdx-grid .rdx-item.\--span-5 {
+    width: 41.66667%;
+  }
+  .rdx-grid .rdx-item.\--offset-6 {
+    margin-left: 50%;
+  }
+  .rdx-grid .rdx-item.\--span-6 {
+    width: 50%;
+  }
+  .rdx-grid .rdx-item.\--offset-7 {
+    margin-left: 58.33333%;
+  }
+  .rdx-grid .rdx-item.\--span-7 {
+    width: 58.33333%;
+  }
+  .rdx-grid .rdx-item.\--offset-8 {
+    margin-left: 66.66667%;
+  }
+  .rdx-grid .rdx-item.\--span-8 {
+    width: 66.66667%;
+  }
+  .rdx-grid .rdx-item.\--offset-9 {
+    margin-left: 75%;
+  }
+  .rdx-grid .rdx-item.\--span-9 {
+    width: 75%;
+  }
+  .rdx-grid .rdx-item.\--offset-10 {
+    margin-left: 83.33333%;
+  }
+  .rdx-grid .rdx-item.\--span-10 {
+    width: 83.33333%;
+  }
+  .rdx-grid .rdx-item.\--offset-11 {
+    margin-left: 91.66667%;
+  }
+  .rdx-grid .rdx-item.\--span-11 {
+    width: 91.66667%;
+  }
+  .rdx-grid .rdx-item.\--offset-12 {
+    margin-left: 100%;
+  }
+  .rdx-grid .rdx-item.\--span-12 {
+    width: 100%;
+  }
 }
 
 html {
