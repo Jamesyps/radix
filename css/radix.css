@@ -469,57 +469,57 @@ section {
   color: #F1C40E;
 }
 
-.\--text-size-default {
+.\--txt-size-default {
   font-size: 0.9375rem;
   line-height: 1.125rem;
 }
 
-.\--text-size-xl {
+.\--txt-size-xl {
   font-size: 3rem;
   line-height: 3.25rem;
 }
 
-.\--text-size-lg {
+.\--txt-size-lg {
   font-size: 2.25rem;
   line-height: 2.375rem;
 }
 
-.\--text-size-md {
+.\--txt-size-md {
   font-size: 1.5rem;
   line-height: 1.625rem;
 }
 
-.\--text-size-sm {
+.\--txt-size-sm {
   font-size: 1.125rem;
   line-height: 1.25rem;
 }
 
-.\--text-size-xs {
+.\--txt-size-xs {
   font-size: 0.875rem;
   line-height: 1rem;
 }
 
-.\--text-weight-hairline {
+.\--txt-weight-hairline {
   font-weight: 100;
 }
 
-.\--text-weight-light {
+.\--txt-weight-light {
   font-weight: 300;
 }
 
-.\--text-weight-regular {
+.\--txt-weight-regular {
   font-weight: 400;
 }
 
-.\--text-weight-semibold {
+.\--txt-weight-semibold {
   font-weight: 600;
 }
 
-.\--text-weight-bold {
+.\--txt-weight-bold {
   font-weight: 700;
 }
 
-.\--text-weight-black {
+.\--txt-weight-black {
   font-weight: 900;
 }
 
