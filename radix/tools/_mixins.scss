@@ -1,6 +1,5 @@
 ////
 /// Mixins
-/// @group Mixins
 ////
 
 /// Generates grid code for a containing element. Useful if users do not wish to use the CSS grid classes
@@ -27,6 +26,7 @@
 ///        }
 ///     }
 ///
+/// @group Grid
 /// @outputs Outputs flexbox CSS properties for generating the Radix grid system
 /// @since 1.0.0
 @mixin rdx-grid($auto: false, $center-x: false, $center-y: false, $flush: false, $reverse: false, $stack: false) {
@@ -81,6 +81,7 @@
 ///        width: 33.3333%;
 ///     }
 ///
+/// @group Grid
 /// @since 1.0.0
 @mixin rdx-span($span) {
     flex: 0;
@@ -99,6 +100,7 @@
 ///        margin-left: 33.3333%;
 ///     }
 ///
+/// @group Grid
 /// @since 1.0.0
 @mixin rdx-offset($span) {
     margin-left: column-width($span);
@@ -123,6 +125,7 @@
 ///        }
 ///     }
 ///
+/// @group Media Queries
 /// @since 1.0.0
 @mixin rdx-mq-from($key) {
     @media screen and (min-width: breakpoint($key)) {
@@ -149,6 +152,7 @@
 ///        }
 ///     }
 ///
+/// @group Media Queries
 /// @since 1.0.0
 @mixin rdx-mq-until($key) {
     @media screen and (max-width: breakpoint($key) - 0.01) {
@@ -176,6 +180,7 @@
 ///        }
 ///     }
 ///
+/// @group Media Queries
 /// @since 1.0.0
 @mixin rdx-mq-between($min, $max) {
     @media screen and (min-width: breakpoint($min)) and (max-width: breakpoint($max)) {
@@ -201,6 +206,7 @@
 ///        }
 ///     }
 ///
+/// @group Media Queries
 /// @since 1.0.0
 @mixin rdx-mq-xl() {
     @include rdx-mq-from('xl') {
@@ -226,6 +232,7 @@
 ///        }
 ///     }
 ///
+/// @group Media Queries
 /// @since 1.0.0
 @mixin rdx-mq-lg() {
     @include rdx-mq-from('lg') {
@@ -251,6 +258,7 @@
 ///        }
 ///     }
 ///
+/// @group Media Queries
 /// @since 1.0.0
 @mixin rdx-mq-md() {
     @include rdx-mq-from('md') {
@@ -276,6 +284,7 @@
 ///        }
 ///     }
 ///
+/// @group Media Queries
 /// @since 1.0.0
 @mixin rdx-mq-sm() {
     @include rdx-mq-from('sm') {
@@ -301,6 +310,7 @@
 ///        }
 ///     }
 ///
+/// @group Media Queries
 /// @since 1.0.0
 @mixin rdx-mq-xs() {
     @include rdx-mq-from('sm') {
@@ -323,6 +333,7 @@
 ///        line-height: 3.25rem;
 ///     }
 ///
+/// @group Fonts
 /// @since 1.0.0
 @mixin rdx-font-size($key: 'default') {
     font-size: font-size($key);
@@ -343,6 +354,7 @@
 ///        font-weight: 100;
 ///     }
 ///
+/// @group Fonts
 /// @since 1.0.0
 @mixin rdx-font-weight($key: 'regular') {
     font-weight: font-weight($key);
@@ -362,6 +374,7 @@
 ///        content: ' ';
 ///     }
 ///
+/// @group Layout
 /// @since 1.0.0
 @mixin rdx-clearfix() {
     &:after {
@@ -387,6 +400,7 @@
 ///        transform: translateX(-50%);
 ///     }
 ///
+/// @group Layout
 /// @since 1.0.0
 @mixin rdx-center-x($position: 'relative') {
     position: $position;
@@ -410,6 +424,7 @@
 ///        transform: translateY(-50%);
 ///     }
 ///
+/// @group Layout
 /// @since 1.0.0
 @mixin rdx-center-y($position: 'relative') {
     position: $position;
@@ -436,6 +451,7 @@
 ///        left: 0;
 ///     }
 ///
+/// @group Layout
 /// @since 1.0.0
 @mixin rdx-overlay($position: 'absolute', $offset: 0) {
     position: $position;
@@ -469,6 +485,7 @@
 ///        outline: none;
 ///     }
 ///
+/// @group Images
 /// @since 1.0.0
 @mixin rdx-replace($image, $width, $height) {
     display: block;

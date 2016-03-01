@@ -1,6 +1,5 @@
 ////
 /// Functions
-/// @group Functions
 ////
 
 /// Merge
@@ -13,6 +12,7 @@
 /// @example
 ///     $new-map: merge(('red': #F00), ('red': #F34036));
 ///
+/// @group Framework
 /// @since 1.0.0
 @function merge($default, $extension) {
     @return map-merge($default, $extension);
@@ -31,6 +31,7 @@
 /// @example - css Output
 ///     background-color: #3498DB;
 ///
+/// @group Colours
 /// @since 1.0.0
 @function colour($key: 'default') {
     @if not map-has-key($radix-colours, $key) {
@@ -53,6 +54,7 @@
 /// @example - css Output
 ///     background-color: #67B2E4;
 ///
+/// @group Colours
 /// @since 1.0.0
 @function tint($key: 'default', $percentage: 25) {
     @return mix(#FFF, colour($key), $percentage);
@@ -71,6 +73,7 @@
 /// @example - css Output
 ///     background-color: #2772A4;
 ///
+/// @group Colours
 /// @since 1.0.0
 @function shade($key: 'default', $percentage: 25) {
     @return mix(#000, colour($key), $percentage);
@@ -89,6 +92,7 @@
 /// @example - css Output
 ///     background-color: rgba(52, 152, 219, 0.5);
 ///
+/// @group Colours
 /// @since 1.0.0
 @function trans($key: 'default', $amount: 0.5) {
     @return transparentize(colour($key), $amount);
@@ -106,6 +110,7 @@
 /// @example - css Output
 ///     background-color: Hevetica, Arial, sans-serif;
 ///
+/// @group Fonts
 /// @since 1.0.0
 @function font-stack($key: 'default') {
     @if not map-has-key($radix-font-stack, $key) {
@@ -127,6 +132,7 @@
 /// @example - css Output
 ///     font-size: 3rem;
 ///
+/// @group Fonts
 /// @since 1.0.0
 @function font-size($key: 'default') {
     @if not map-has-key($radix-font-sizes, $key) {
@@ -150,6 +156,7 @@
 /// @example - css Output
 ///     font-weight: 600;
 ///
+/// @group Fonts
 /// @since 1.0.0
 @function font-weight($key: 'regular') {
     @if not map-has-key($radix-font-weights, $key) {
@@ -171,6 +178,7 @@
 /// @example - css Output
 ///     line-height: 3.25rem;
 ///
+/// @group Fonts
 /// @since 1.0.0
 @function line-height($key: 'default') {
     @if not map-has-key($radix-font-sizes, $key) {
@@ -198,6 +206,7 @@
 ///        // ...
 ///     }
 ///
+/// @group Media Queries
 /// @access private
 /// @since 1.0.0
 @function breakpoint($key) {
@@ -220,6 +229,7 @@
 /// @example - css Output
 ///     width: 41.66667%;
 ///
+/// @group Grid
 /// @access private
 /// @since 1.0.0
 @function column-width($span) {
@@ -238,6 +248,7 @@
 /// @example - css Output
 ///     font-size: 2.25rem;
 ///
+/// @group Framework
 /// @access private
 /// @since 1.0.0
 @function rem($value) {
