@@ -220,7 +220,15 @@ input[type=button] {
   display: flex;
 }
 
-.rdx-grid.\--reverse:not(.\--stack) {
+.rdx-grid.\--stack {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.rdx-grid.\--reverse:not(.rdx-grid.\--stack) {
   -webkit-box-orient: horizontal;
   -webkit-box-direction: reverse;
   -webkit-flex-direction: row-reverse;
@@ -234,14 +242,6 @@ input[type=button] {
   -webkit-flex-direction: column-reverse;
       -ms-flex-direction: column-reverse;
           flex-direction: column-reverse;
-}
-
-.rdx-grid.\--stack {
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: column;
-      -ms-flex-direction: column;
-          flex-direction: column;
 }
 
 @media screen and (min-width: 45em) {

@@ -27,16 +27,16 @@
             display: flex;
         }
 
-        &.\--reverse:not(.\--stack) {
+        &.\--stack {
+            flex-direction: column;
+        }
+
+        &.\--reverse:not(#{&}.\--stack) {
             flex-direction: row-reverse;
         }
 
         &.\--reverse {
             flex-direction: column-reverse;
-        }
-
-        &.\--stack {
-            flex-direction: column;
         }
 
         @include rdx-mq-sm() {
