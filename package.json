@@ -1,6 +1,6 @@
 {
   "name": "radix-framework",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "The Root Studio modern framework based on Flexbox",
   "author": "James Wigger <james@rootstudio.co.uk>",
   "license": "MIT",
