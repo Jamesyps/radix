@@ -515,8 +515,8 @@ input[type="radio"] {
 }
 
 small {
-  font-size: 0.875rem;
-  line-height: 1rem;
+  font-size: 0.625rem;
+  line-height: 0.75rem;
 }
 
 strong {
@@ -591,23 +591,23 @@ section {
 }
 
 .\--txt-size-lg {
-  font-size: 2.25rem;
-  line-height: 2.375rem;
+  font-size: 2rem;
+  line-height: 2.125rem;
 }
 
 .\--txt-size-md {
-  font-size: 1.5rem;
-  line-height: 1.625rem;
-}
-
-.\--txt-size-sm {
   font-size: 1.125rem;
   line-height: 1.25rem;
 }
 
-.\--txt-size-xs {
+.\--txt-size-sm {
   font-size: 0.875rem;
   line-height: 1rem;
+}
+
+.\--txt-size-xs {
+  font-size: 0.625rem;
+  line-height: 0.75rem;
 }
 
 .\--txt-weight-hairline {
