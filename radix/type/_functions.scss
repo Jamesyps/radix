@@ -1,0 +1,123 @@
+////
+/// Type
+/// Functions for accessing and manipulating the text settings
+///
+/// @group Type
+/// @author James Wigger <james@rootstudio.co.uk>
+////
+
+/// Returns a font stack by key
+///
+/// @param {string} $key [body] - the key / label of the font stack
+/// @return {list} - a list of the font-family values
+///
+/// @example - scss Basic Usage
+///     font-family: font-stack('body');
+///
+/// @example - css Output
+///     font-family: Hevetica, Arial, sans-serif;
+///
+/// @since 1.0.0
+@function font-stack($key: 'body') {
+    @if not map-has-key($radix-font-stack, $key) {
+        @error 'No font stack exists with the key: #{$key}';
+    }
+
+    @return map-get($radix-font-stack, $key);
+}
+
+/// Returns a font weighting by key
+///
+/// @param {string} $key [regular] - the key / label of the font weight
+/// @return {number} - the font weight value
+///
+/// @example - scss Basic Usage
+///     font-weight: font-weight('semibold');
+///
+/// @example - css Output
+///     font-weight: 600;
+///
+/// @since 1.0.0
+@function font-weight($key: 'regular') {
+    @if not map-has-key($radix-font-weights, $key) {
+        @error 'No font weighting exists with the key: #{$key}';
+    }
+
+    @return map-get($radix-font-weights, $key);
+}
+
+/// Returns a font-size by key without modification
+///
+/// @param {string} $key [md] - the key / label of the font size group
+/// @return {number} - a rem value of the size
+///
+/// @example - scss Basic Usage
+///     font-size: font-size-raw('xl');
+///
+/// @example - css Output
+///     font-size: 48px;
+///
+/// @since 1.0.0
+@function font-size-raw($key: 'md') {
+    @if not map-has-key($radix-font-sizes, $key) {
+        @error 'No font size exists with the key: #{$key}';
+    }
+
+    $font-size: nth(map-get($radix-font-sizes, $key), 1);
+
+    @return $font-size;
+}
+
+/// Returns a relative font-size by key
+///
+/// @param {string} $key [md] - the key / label of the font size group
+/// @return {number} - a rem value of the size
+///
+/// @example - scss Basic Usage
+///     font-size: font-size('xl');
+///
+/// @example - css Output
+///     font-size: 3rem;
+///
+/// @since 1.0.0
+@function font-size($key: 'md') {
+    @return px-to-relative(font-size-raw($key));
+}
+
+/// Returns a line-height by key without modification
+///
+/// @param {string} $key [md] - the key / label of the line-height group
+/// @return {number} - a rem value of the size
+///
+/// @example - scss Basic Usage
+///     line-height: line-height-raw('xl');
+///
+/// @example - css Output
+///     line-height: 52px;
+///
+/// @since 1.0.0
+@function line-height-raw($key: 'default') {
+    @if not map-has-key($radix-font-sizes, $key) {
+        @error 'No font size exists with the key: #{$key}';
+    }
+
+    $line-height: nth(map-get($radix-font-sizes, $key), 2);
+
+    @return $line-height;
+}
+
+/// Returns a relative line-height by key
+///
+/// @param {string} $key [md] - the key / label of the line-height group
+/// @return {number} - a rem value of the size
+///
+/// @example - scss Basic Usage
+///     line-height: line-height('xl');
+///
+/// @example - css Output
+///     line-height: 3.25rem;
+///
+/// @since 1.0.0
+@function line-height($key: 'md') {
+    @return px-to-relative(line-height-raw($key));
+}

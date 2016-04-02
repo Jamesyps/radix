@@ -1,0 +1,24 @@
+////
+/// Layout
+/// Functions for accessing and manipulating structural settings
+///
+/// @group Layout
+/// @author James Wigger <james@rootstudio.co.uk>
+////
+
+/// Calculates the width value for a span of columns
+///
+/// @param {string} $span - the number of columns to span
+/// @return {number} - a width value
+///
+/// @example - scss Basic Usage
+///     width: column-width(5);
+///
+/// @example - css Output
+///     width: 41.66667%;
+///
+/// @access private
+/// @since 1.0.0
+@function column-width($span) {
+    @return ($span / $radix-gs-columns) * 100%;
+}

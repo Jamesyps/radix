@@ -1,0 +1,32 @@
+////
+/// Layout
+/// Settings that will affect the structure of a page and how
+/// elements are positioned
+///
+/// @group Layout
+/// @author James Wigger <james@rootstudio.co.uk>
+////
+
+/// Defines the number of columns in the grid. Used for width calculations on spans and offsets
+///
+/// @access private
+/// @since 1.0.0
+$radix-gs-columns: $user-gs-columns;
+
+/// The spacing between items in the grid
+///
+/// @access private
+/// @since 1.0.0
+$radix-gs-gutter: $user-gs-gutter;
+
+/// The maximum width the container can expand to unless is fluid
+///
+/// @access private
+/// @since 1.0.0
+$radix-container-width: $user-container-width;
+
+/// The internal spacing of the container content
+///
+/// @access private
+/// @since 1.0.0
+$radix-container-padding: $user-container-padding;

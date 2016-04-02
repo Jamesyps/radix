@@ -1,0 +1,205 @@
+////
+/// Display
+/// Mixins to apply display styles to elements
+///
+/// @group Display
+/// @author James Wigger <james@rootstudio.co.uk>
+////
+
+/// Floats an element to the left
+///
+/// @example - scss Basic Usage
+///     .pull-quote {
+///        @include rdx-left();
+///     }
+///
+/// @example - css Output
+///     .pull-quote {
+///        float: left;
+///     }
+///
+/// @since 1.0.0
+@mixin rdx-left() {
+    float: left;
+}
+
+/// Floats an element to the right
+///
+/// @example - scss Basic Usage
+///     .pull-quote {
+///        @include rdx-right();
+///     }
+///
+/// @example - css Output
+///     .pull-quote {
+///        float: right;
+///     }
+///
+/// @since 1.0.0
+@mixin rdx-right() {
+    float: right;
+}
+
+/// Used on an element that will contain floated items. Preserves the height of the parent.
+///
+/// @example - scss Basic Usage
+///     .quote-container {
+///        @include rdx-clearfix();
+///     }
+///
+/// @example - css Output
+///     .quote-container:after {
+///        display: block;
+///        clear: both;
+///        visibility: hidden;
+///        height: 0;
+///        font-size: 0;
+///        content: ' ';
+///     }
+///
+/// @since 1.0.0
+@mixin rdx-clearfix() {
+    &:after {
+        display: block;
+        clear: both;
+        visibility: hidden;
+        height: 0;
+        font-size: 0;
+        content: ' ';
+    }
+}
+
+/// Apply a display property to an element
+///
+/// @param {string} $property [block]- The display property to be applied
+///
+/// @example - scss Basic Usage
+///     .action-button {
+///        @include rdx-display('inline-block');
+///     }
+///
+/// @example - css Output
+///     .action-button {
+///        display: inline-block;
+///     }
+///
+/// @since 1.0.0
+@mixin rdx-display($property: 'block') {
+    display: $property;
+}
+
+/// Applies styles to an element that will allow it to fill the width of its parent
+///
+/// @example - scss Basic Usage
+///     .banner-image {
+///        @include rdx-fill();
+///     }
+///
+/// @example - css Output
+///     .banner-image {
+///        display: block;
+///        width: 100%;
+///     }
+///
+/// @since 1.0.0
+@mixin rdx-fill() {
+    @include rdx-display('block');
+
+    width: 100%;
+}
+
+/// Useful for responsive images, elements will fill a contain until their
+/// full width is reached. They will not fill their parent if it is wider.
+///
+/// @example - scss Basic Usage
+///     .banner-image {
+///        @include rdx-fit();
+///     }
+///
+/// @example - css Output
+///     .banner-image {
+///        display: block;
+///        max-width: 100%;
+///     }
+///
+/// @since 1.0.0
+@mixin rdx-fit() {
+    @include rdx-display('block');
+
+    max-width: 100%;
+}
+
+/// Horizontally centers an element on screen
+///
+/// @param {string} $position [relative] - the position property the element should use
+///
+/// @example - scss Basic Usage
+///     .alert-box {
+///        @include rdx-center-x();
+///     }
+///
+/// @example - css Output
+///     .alert-box {
+///        position: relative;
+///        left: 50%;
+///        transform: translateX(-50%);
+///     }
+///
+/// @since 1.0.0
+@mixin rdx-center-x($position: 'relative') {
+    position: $position;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/// Vertically centers an element on screen
+///
+/// @param {string} $position [relative] - the position property the element should use
+///
+/// @example - scss Basic Usage
+///     .alert-box {
+///        @include rdx-center-y();
+///     }
+///
+/// @example - css Output
+///     .alert-box {
+///        position: relative;
+///        top: 50%;
+///        transform: translateY(-50%);
+///     }
+///
+/// @since 1.0.0
+@mixin rdx-center-y($position: 'relative') {
+    position: $position;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/// Positions an element over the containing element
+///
+/// @param {string} $position [absolute] - the position property the element should use
+/// @param {number} $offset [0] - the edge spacing of the overlaying element
+///
+/// @example - scss Basic Usage
+///     .confirm-dialogue {
+///        @include rdx-overlay();
+///     }
+///
+/// @example - css Output
+///     .confirm-dialogue {
+///        position: absolute;
+///        top: 0;
+///        right: 0;
+///        bottom: 0;
+///        left: 0;
+///     }
+///
+/// @since 1.0.0
+@mixin rdx-overlay($position: 'absolute', $offset: 0) {
+    position: $position;
+    top: $offset;
+    right: $offset;
+    bottom: $offset;
+    left: $offset;
+}
+

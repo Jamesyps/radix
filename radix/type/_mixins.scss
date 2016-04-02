@@ -1,0 +1,47 @@
+////
+/// Type
+/// Mixins for applying text visual styles
+///
+/// @group Type
+/// @author James Wigger <james@rootstudio.co.uk>
+////
+
+/// Returns a font-size / line-height paring from system config by key
+///
+/// @param {string} $key [default] - the font-size key / label
+///
+/// @example - scss Basic Usage
+///     .headline {
+///        @include rdx-font-size('xl');
+///     }
+///
+/// @example - css Output
+///     .headline {
+///        font-size: 3rem;
+///        line-height: 3.25rem;
+///     }
+///
+/// @since 1.0.0
+@mixin rdx-font-size($key: 'default') {
+    font-size: font-size($key);
+    line-height: line-height($key);
+}
+
+/// Returns a font-weight property
+///
+/// @param {string} $key [regular] - the font-weight key / label
+///
+/// @example - scss Basic Usage
+///     .headline--thin {
+///        @include rdx-font-weight('hairline');
+///     }
+///
+/// @example - css Output
+///     .headline--thin {
+///        font-weight: 100;
+///     }
+///
+/// @since 1.0.0
+@mixin rdx-font-weight($key: 'regular') {
+    font-weight: font-weight($key);
+}

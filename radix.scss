@@ -1,7 +1,9 @@
 @charset "utf-8";
 
-@import 'radix/tools/tools';
-@import 'radix/config/variables';
-
+@import 'radix/framework/framework';
+@import 'radix/appearance/appearance';
+@import 'radix/display/display';
 @import 'radix/layout/layout';
-@import 'radix/base/base';
+@import 'radix/responsive/responsive';
+@import 'radix/spacing/spacing';
+@import 'radix/type/type';

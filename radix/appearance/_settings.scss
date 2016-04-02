@@ -1,0 +1,44 @@
+////
+/// Appearance
+/// Settings that will affect visual utilities such as background,
+/// borders and font colours.
+///
+/// @group Appearance
+/// @author James Wigger <james@rootstudio.co.uk>
+////
+
+/// The system default colour-scheme map that users can extend or modify.
+/// This should not be modified directly.
+///
+/// @access private
+/// @since 1.0.0
+$radix-colours: merge((
+    'default': #ECF0F1,
+    'primary': #3498DB,
+    'secondary': #34495E,
+    'success': #00C67C,
+    'error': #EF2F2A,
+    'notice': #F1C40E
+), $user-colours);
+
+/// The system default border-radius map that users can extend or modify.
+/// This should not be modified directly.
+///
+/// @access private
+/// @since 1.0.0
+$radix-radii: merge((
+    'sm': 3px,
+    'md': 5px,
+    'lg': 10px
+), $user-radii);
+
+/// The system default border width map that users can extend or modify.
+/// This should not be modified directly.
+///
+/// @access private
+/// @since 1.0.0
+$radix-border-widths: merge((
+    'sm': 1px,
+    'md': 2px,
+    'lg': 3px
+), $user-border-widths);

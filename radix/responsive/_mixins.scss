@@ -1,0 +1,211 @@
+////
+/// Responsive
+/// Mixins for apply responsive styles to elements, most commonly as @media blocks
+///
+/// @group Responsive
+/// @author James Wigger <james@rootstudio.co.uk>
+////
+
+/// Outputs a media query for sizes greater than the given breakpoint
+///
+/// @param {string} $key - the name of the breakpoint to use
+/// @content the contents of the media query block
+///
+/// @example - scss Basic Usage
+///     @include rdx-mq-from('md') {
+///        .item {
+///            display: none;
+///        }
+///     }
+///
+/// @example - css Output
+///     @media screen and (min-width: 59em) {
+///        .item {
+///            display: none;
+///        }
+///     }
+///
+/// @since 1.0.0
+@mixin rdx-mq-from($key) {
+    @media screen and (min-width: breakpoint($key)) {
+        @content;
+    }
+}
+
+/// Outputs a media query for sizes up-to the the given breakpoint size
+///
+/// @param {string} $key - the name of the breakpoint to use
+/// @content the contents of the media query block
+///
+/// @example - scss Basic Usage
+///     @include rdx-mq-until('md') {
+///        .item {
+///            width: 100%;
+///        }
+///     }
+///
+/// @example - css Output
+///     @media screen and (max-width: 58.99em) {
+///        .item {
+///            width: 100%;
+///        }
+///     }
+///
+/// @since 1.0.0
+@mixin rdx-mq-until($key) {
+    @media screen and (max-width: breakpoint($key) - 0.01) {
+        @content;
+    }
+}
+
+/// Outputs a book-ended media query for targeting between two breakpoints
+///
+/// @param {string} $min - the name of the smaller breakpoint
+/// @param {string} $max - the name of the larger breakpoint
+/// @content the contents of the media query block
+///
+/// @example - scss Basic Usage
+///     @include rdx-mq-between('sm', 'lg') {
+///        .item {
+///            background: red;
+///        }
+///     }
+///
+/// @example - css Output
+///     @media screen and (max-width: 45em) and (max-width: 73em) {
+///        .item {
+///            background: red;
+///        }
+///     }
+///
+/// @since 1.0.0
+@mixin rdx-mq-between($min, $max) {
+    @media screen and (min-width: breakpoint($min)) and (max-width: breakpoint($max)) {
+        @content;
+    }
+}
+
+/// Helper mixin for outputting the media query of largest breakpoint size
+///
+/// @content the contents of the media query block
+///
+/// @example - scss Basic Usage
+///     @include rdx-mq-xl() {
+///        .item {
+///            display: none;
+///        }
+///     }
+///
+/// @example - css Output
+///     @media screen and (min-width: 86em) {
+///        .item {
+///            display: none;
+///        }
+///     }
+///
+/// @since 1.0.0
+@mixin rdx-mq-xl() {
+    @include rdx-mq-from('xl') {
+        @content;
+    }
+}
+
+/// Helper mixin for outputting the media query up to the second-largest breakpoint size
+///
+/// @content the contents of the media query block
+///
+/// @example - scss Basic Usage
+///     @include rdx-mq-lg() {
+///        .item {
+///            display: none;
+///        }
+///     }
+///
+/// @example - css Output
+///     @media screen and (min-width: 73em) {
+///        .item {
+///            display: none;
+///        }
+///     }
+///
+/// @since 1.0.0
+@mixin rdx-mq-lg() {
+    @include rdx-mq-from('lg') {
+        @content;
+    }
+}
+
+/// Helper mixin for outputting the media query up to the medium breakpoint size
+///
+/// @content the contents of the media query block
+///
+/// @example - scss Basic Usage
+///     @include rdx-mq-md() {
+///        .item {
+///            display: none;
+///        }
+///     }
+///
+/// @example - css Output
+///     @media screen and (min-width: 59em) {
+///        .item {
+///            display: none;
+///        }
+///     }
+///
+/// @since 1.0.0
+@mixin rdx-mq-md() {
+    @include rdx-mq-from('md') {
+        @content;
+    }
+}
+
+/// Helper mixin for outputting the media query up to the smaller breakpoint size
+///
+/// @content the contents of the media query block
+///
+/// @example - scss Basic Usage
+///     @include rdx-mq-sm() {
+///        .item {
+///            display: none;
+///        }
+///     }
+///
+/// @example - css Output
+///     @media screen and (min-width: 45em) {
+///        .item {
+///            display: none;
+///        }
+///     }
+///
+/// @since 1.0.0
+@mixin rdx-mq-sm() {
+    @include rdx-mq-from('sm') {
+        @content;
+    }
+}
+
+/// Helper mixin for outputting the media query up to the smallest breakpoint size
+///
+/// @content the contents of the media query block
+///
+/// @example - scss Basic Usage
+///     @include rdx-mq-xs() {
+///        .item {
+///            display: none;
+///        }
+///     }
+///
+/// @example - css Output
+///     @media screen and (min-width: 34em) {
+///        .item {
+///            display: none;
+///        }
+///     }
+///
+/// @since 1.0.0
+@mixin rdx-mq-xs() {
+    @include rdx-mq-from('sm') {
+        @content;
+    }
+}

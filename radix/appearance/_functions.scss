@@ -1,0 +1,170 @@
+////
+/// Appearance
+/// Functions for accessing and manipulating visual settings
+///
+/// @group Appearance
+/// @author James Wigger <james@rootstudio.co.uk>
+////
+
+/// Returns a colour value from the system colours map
+///
+/// @require {map} $radix-colours - the Radix colours map
+/// @param {string} $key [default] - the key / label of the colour
+/// @return {string} - a colour value for the key
+///
+/// @example - scss Basic Usage
+///     background-color: colour('primary');
+///
+/// @example - css Output
+///     background-color: #3498DB;
+///
+/// @since 1.0.0
+@function colour($key: 'default') {
+    @if not map-has-key($radix-colours, $key) {
+        @error 'No colour exists with the key: #{$key}';
+    }
+
+    @return map-get($radix-colours, $key);
+}
+
+/// Returns a tinted version of a plain colour value (mixed with white)
+///
+/// @param {string} $colour - the colour value
+/// @param {number} $percentage [25] - the amount to mix the colours
+/// @return {string} - a modified colour value for the key
+///
+/// @example - scss Basic Usage
+///     background-color: tint-raw(#FF0000);
+///
+/// @example - css Output
+///     background-color: #FF4040;
+///
+/// @since 1.0.0
+@function tint-raw($colour, $percentage: 25) {
+    @return mix(#FFF, $colour, $percentage);
+}
+
+/// Returns a tinted version of a colour (mixed with white) from the colour map by key
+///
+/// @param {string} $key [default] - the key / label of the colour
+/// @param {number} $percentage [25] - the amount to mix the colours
+/// @return {string} - a modified colour value for the key
+///
+/// @example - scss Basic Usage
+///     background-color: tint('primary');
+///
+/// @example - css Output
+///     background-color: #67B2E4;
+///
+/// @since 1.0.0
+@function tint($key: 'default', $percentage: 25) {
+    @return tint-raw(colour($key), $percentage);
+}
+
+/// Returns a shaded version of a plain colour value (mixed with black)
+///
+/// @param {string} $colour - the colour value
+/// @param {number} $percentage [25] - the amount to mix the colours
+/// @return {string} - a modified colour value for the key
+///
+/// @example - scss Basic Usage
+///     background-color: shade-raw(#FF0000);
+///
+/// @example - css Output
+///     background-color: #BF0000;
+///
+/// @since 1.0.0
+@function shade-raw($colour, $percentage: 25) {
+    @return mix(#000, $colour, $percentage);
+}
+
+/// Returns a shaded version of a colour (mixed with black) from the colour map by key
+///
+/// @param {string} $key [default] - the key / label of the colour
+/// @param {number} $percentage [25] - the amount to mix the colours
+/// @return {string} - a modified colour value for the key
+///
+/// @example - scss Basic Usage
+///     background-color: shade('primary');
+///
+/// @example - css Output
+///     background-color: #2772A4;
+///
+/// @since 1.0.0
+@function shade($key: 'default', $percentage: 25) {
+    @return shade-raw(colour($key), $percentage);
+}
+
+/// Returns a transparent version of a plain colour value in rgba format
+///
+/// @param {string} $colour - the colour value
+/// @param {number} $amount [0.5] - the opacity of the colour
+/// @return {string} - a modified colour value for the key in rgba format
+///
+/// @example - scss Basic Usage
+///     background-color: trans-raw(#FF0000);
+///
+/// @example - css Output
+///     background-color: rgba(255, 0, 0, 0.5);
+///
+/// @since 1.0.0
+@function trans-raw($colour, $amount: 0.5) {
+    @return transparentize($colour, $amount);
+}
+
+/// Returns a transparent version of a colour (rgba) from the colour map by key
+///
+/// @param {string} $key [default] - the key / label of the colour
+/// @param {number} $amount [0.5] - the opacity of the colour
+/// @return {string} - a modified colour value for the key in rgba format
+///
+/// @example - scss Basic Usage
+///     background-color: trans('primary');
+///
+/// @example - css Output
+///     background-color: rgba(52, 152, 219, 0.5);
+///
+/// @since 1.0.0
+@function trans($key: 'default', $amount: 0.5) {
+    @return trans-raw(colour($key), $amount);
+}
+
+/// Returns a radius value from the border radii map by key
+///
+/// @param {string} $key - the key / label of the radius
+/// @return {string} - a radius value
+///
+/// @example - scss Basic Usage
+///     border-radius: border-radius('lg');
+///
+/// @example - css Output
+///     border-radius: 10px;
+///
+/// @since 1.0.0
+@function border-radius($key) {
+    @if not map-has-key($radix-radii, $key) {
+        @error 'No radii exists with the key: #{$key}';
+    }
+
+    @return map-get($radix-radii, $key);
+}
+
+/// Returns a width value from the border widths map by key
+///
+/// @param {string} $key - the key / label of the width
+/// @return {string} - a width value
+///
+/// @example - scss Basic Usage
+///     border: border-width('md') solid red;
+///
+/// @example - css Output
+///     border: 2px solid red;
+///
+/// @since 1.0.0
+@function border-width($key) {
+    @if not map-has-key($radix-border-widths, $key) {
+        @error 'No border width exists with the key: #{$key}';
+    }
+
+    @return map-get($radix-border-widths, $key);
+}

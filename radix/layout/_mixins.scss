@@ -1,0 +1,134 @@
+////
+/// Layout
+/// Mixins for applying structural styles to elements.
+///
+/// @group Layout
+/// @author James Wigger <james@rootstudio.co.uk>
+////
+
+/// Applies styles to make a grid container
+///
+/// @param {bool} $fixed [true] - Enables the max-width property to limit size of container
+///
+/// @example - scss Basic Usage
+///     .grid-row {
+///        @include rdx-container();
+///     }
+///
+/// @example - css Output
+///     .grid-row {
+///        position: relative;
+///        margin: 0 auto;
+///        padding: 0 5%;
+///     }
+///
+/// @since 1.0.0
+@mixin rdx-container($fixed: true) {
+    position: relative;
+    margin: 0 auto;
+    padding: 0 $radix-container-padding;
+
+    @if($fixed) {
+        max-width: $radix-container-width;
+    }
+}
+
+/// Generates grid code for a containing element. Useful if users do not wish to use the CSS grid classes
+/// in their markup.
+///
+/// @param {bool} $auto - Enables the auto-grid function where items will wrap
+/// @param {bool} $center-x - Horizontally centers items
+/// @param {bool} $center-y - Vertically center items
+/// @param {bool} $flush -  Removes all spacing between items
+/// @param {bool} $reverse - Reveres the order of the items
+/// @param {bool} $stack - Display items in a column rather than horizontally
+///
+/// @example - scss Basic Usage
+///     .grid-row
+///        @include rdx-grid($auto: true);
+///     }
+///
+/// @example - css Output
+///     .grid-row
+///        display: flex;
+///        flex-wrap: wrap;
+///        > * {
+///            flex: none;
+///        }
+///     }
+///
+/// @since 1.0.0
+@mixin rdx-grid($auto: false, $center-x: false, $center-y: false, $flush: false, $reverse: false, $stack: false) {
+    display: flex;
+
+    @if $auto {
+        flex-wrap: wrap;
+
+        > * {
+            flex: none;
+        }
+    }
+
+    @if $center-x {
+        justify-content: center;
+    }
+
+    @if $center-y {
+        align-items: center;
+    }
+
+    @if $flush {
+        > * {
+            margin: 0;
+            padding: 0;
+        }
+    }
+
+    @if $reverse {
+        @if $stack {
+            flex-direction: column-reverse;
+        } @else {
+            flex-direction: row-reverse;
+        }
+    }
+
+    @if $stack {
+        flex-direction: column;
+    }
+}
+
+/// Sets the span width for an element not using the CSS grid classes
+///
+/// @example - scss Basic Usage
+///     .grid-item {
+///        @include rdx-span(4);
+///     }
+///
+/// @example - css Output
+///     .grid-item {
+///        flex: 0;
+///        width: 33.3333%;
+///     }
+///
+/// @since 1.0.0
+@mixin rdx-span($span) {
+    flex: 0;
+    width: column-width($span);
+}
+
+/// Sets the offset for an element not using the CSS grid classes
+///
+/// @example - scss Basic Usage
+///     .grid-item {
+///        @include rdx-offset(4);
+///     }
+///
+/// @example - css Output
+///     .grid-item {
+///        margin-left: 33.3333%;
+///     }
+///
+/// @since 1.0.0
+@mixin rdx-offset($span) {
+    margin-left: column-width($span);
+}

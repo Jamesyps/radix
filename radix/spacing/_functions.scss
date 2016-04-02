@@ -1,0 +1,45 @@
+////
+/// Spacing
+/// Functions to access and manipulate the spacing setting values
+///
+/// @group Spacing
+/// @author James Wigger <james@rootstudio.co.uk>
+////
+
+/// Returns a size value from the spacing map without modification
+///
+/// @require {map} $radix-spacing - the Radix spacing map
+/// @param {string} $key [md] - the key / label of the size value
+/// @return {string} - a size value for the key
+///
+/// @example - scss Basic Usage
+///     margin-left: spacing-raw('md');
+///
+/// @example - css Output
+///     margin-left: 16px;
+///
+/// @since 1.0.0
+@function spacing-raw($key: 'md') {
+    @if not map-has-key($radix-spacing, $key) {
+        @error 'No spacing exists with the key: #{$key}';
+    }
+
+    @return map-get($radix-spacing, $key);
+}
+
+/// Returns a converted relative size value from the spacing map
+///
+/// @require {map} $radix-spacing - the Radix spacing map
+/// @param {string} $key [md] - the key / label of the size value
+/// @return {string} - a size value for the key
+///
+/// @example - scss Basic Usage
+///     margin-left: spacing('md');
+///
+/// @example - css Output
+///     margin-left: 1rem;
+///
+/// @since 1.0.0
+@function spacing($key: 'md') {
+    @return px-to-relative(spacing-raw($key));
+}

@@ -1,0 +1,56 @@
+////
+/// Type
+/// Settings that will affect the text visuals of the document
+///
+/// @group Type
+/// @author James Wigger <james@rootstudio.co.uk>
+////
+
+/// The system default font-family stack that users can extend or modify.
+/// This should not be modified directly.
+///
+/// @access private
+/// @since 1.0.0
+$radix-font-stack: merge((
+    'body': (
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        "Roboto",
+        "Oxygen",
+        "Ubuntu",
+        "Cantarell",
+        "Fira Sans",
+        "Droid Sans",
+        "Helvetica Neue",
+        Arial,
+        sans-serif
+    )
+), $user-font-stack);
+
+/// The system default font-size groups that users can extend or modify.
+/// This should not be modified directly.
+///
+/// @access private
+/// @since 1.0.0
+$radix-font-sizes: merge((
+    'xs': (10, 12),
+    'sm': (14, 16),
+    'md': (16, 18),
+    'lg': (32, 34),
+    'xl': (48, 52),
+), $user-font-sizes);
+
+/// The system default font-weight options that users can extend or modify.
+/// This should not be modified directly.
+///
+/// @access private
+/// @since 1.0.0
+$radix-font-weights: merge((
+    'hairline': 100,
+    'light': 300,
+    'regular': 400,
+    'semibold': 600,
+    'bold': 700,
+    'black': 900
+), $user-font-weights);

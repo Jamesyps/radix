@@ -1,0 +1,98 @@
+////
+/// Spacing
+/// Mixins to apply spacing styles to elements
+///
+/// @group Spacing
+/// @author James Wigger <james@rootstudio.co.uk>
+////
+
+/// Applies a margin (external spacing) to an element using the set spacing values
+///
+/// @param {string} $direction [a]- Apply margins in a direction. Possible values are:
+/// * <code>a</code> (all)
+/// * <code>x</code> (x-axis)
+/// * <code>y</code> (y-axis)
+/// * <code>t</code> (top)
+/// * <code>r</code> (right)
+/// * <code>b</code> (bottom)
+/// * <code>l</code> (left)
+/// @param {string} $key [md] - the key / label of the size value
+///
+/// @example - scss Basic Usage
+///     .alert-panel {
+///        @include rdx-margin('x', 'lg');
+///     }
+///
+/// @example - css Output
+///     .alert-panel {
+///        margin-right: 2.5rem;
+///        margin-left: 2.5rem;
+///     }
+///
+/// @since 1.0.0
+@mixin rdx-margin($direction: 'a', $key: 'md') {
+    @if ($direction == 'a') {
+        margin: spacing($key);
+    }
+
+    @if ($direction == 't' OR $direction == 'y') {
+        margin-top: spacing($key);
+    }
+
+    @if ($direction == 'r' OR $direction == 'x') {
+        margin-right: spacing($key);
+    }
+
+    @if ($direction == 'b' OR $direction == 'y') {
+        margin-bottom: spacing($key);
+    }
+
+    @if ($direction == 'l' OR $direction == 'x') {
+        margin-left: spacing($key);
+    }
+}
+
+/// Applies padding (internal spacing) to an element using the set spacing values
+///
+/// @param {string} $direction [a]- Apply padding in a direction. Possible values are:
+/// * <code>a</code> (all)
+/// * <code>x</code> (x-axis)
+/// * <code>y</code> (y-axis)
+/// * <code>t</code> (top)
+/// * <code>r</code> (right)
+/// * <code>b</code> (bottom)
+/// * <code>l</code> (left)
+/// @param {string} $key [md] - the key / label of the size value
+///
+/// @example - scss Basic Usage
+///     .big-button {
+///        @include rdx-padding('a', 'md');
+///     }
+///
+/// @example - css Output
+///     .big-button {
+///        padding: 1.25rem;
+///     }
+///
+/// @since 1.0.0
+@mixin rdx-padding($direction: 'a', $key: 'md') {
+    @if ($direction == 'a') {
+        padding: spacing($key);
+    }
+
+    @if ($direction == 't' OR $direction == 'y') {
+        padding-top: spacing($key);
+    }
+
+    @if ($direction == 'r' OR $direction == 'x') {
+        padding-right: spacing($key);
+    }
+
+    @if ($direction == 'b' OR $direction == 'y') {
+        padding-bottom: spacing($key);
+    }
+
+    @if ($direction == 'l' OR $direction == 'x') {
+        padding-left: spacing($key);
+    }
+}

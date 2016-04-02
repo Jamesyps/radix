@@ -1,0 +1,67 @@
+////
+/// Framework
+/// Core framework settings for internal Radix functions / mixins
+///
+/// @group Framework
+/// @author James Wigger <james@rootstudio.co.uk>
+////
+
+/// User configurable colour scheme
+///
+/// @since 1.0.0
+$user-colours: () !default;
+
+/// User configurable border radii
+///
+/// @since 1.0.0
+$user-radii: () !default;
+
+/// User configurable border widths
+///
+/// @since 1.0.0
+$user-border-widths: () !default;
+
+/// User configurable font-family stack
+///
+/// @since 1.0.0
+$user-font-stack: () !default;
+
+/// User configurable font-size groups
+///
+/// @since 1.0.0
+$user-font-sizes: () !default;
+
+/// User configurable font weights
+///
+/// @since 1.0.0
+$user-font-weights: () !default;
+
+/// User configurable media query breakpoints
+///
+/// @since 1.0.0
+$user-breakpoints: () !default;
+
+/// User configurable value for the number of grid columns
+///
+/// @since 1.0.0
+$user-gs-columns: 12 !default;
+
+/// User configurable value for the spacing between grid columns
+///
+/// @since 1.0.0
+$user-gs-gutter: 20px !default;
+
+/// User configurable max-width for containers
+///
+/// @since 1.0.0
+$user-container-width: 1280px !default;
+
+/// User configurable internal spacing of container elements
+///
+/// @since 1.0.0
+$user-container-padding: 5% !default;
+
+/// User configurable spacing size values
+///
+/// @since 1.0.0
+$user-spacing: () !default;

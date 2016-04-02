@@ -1,0 +1,32 @@
+////
+/// Responsive
+/// Functions for accessing and manipulating responsive state settings
+///
+/// @group Responsive
+/// @author James Wigger <james@rootstudio.co.uk>
+////
+
+/// Returns a breakpoint by key
+///
+/// @param {string} $key - the key / label of the breakpoint
+/// @return {number} - a width value
+///
+/// @example - scss Basic Usage
+///     @media screen and (max-width: breakpoint('xl')) {
+///        // ...
+///     }
+///
+/// @example - css Output
+///     @media screen and (max-width: 73em) {
+///        // ...
+///     }
+///
+/// @access private
+/// @since 1.0.0
+@function breakpoint($key) {
+    @if not map-has-key($radix-breakpoints, $key) {
+        @error 'No breakpoint exists with the key: #{$key}';
+    }
+
+    @return map-get($radix-breakpoints, $key);
+}

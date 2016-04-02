@@ -1,0 +1,60 @@
+////
+/// Framework
+/// Core framework functions for managing internal data / settings.
+///
+/// @group Framework
+/// @author James Wigger <james@rootstudio.co.uk>
+////
+
+/// Combines two maps together allowing non-destructive extension of properties
+///
+/// @param {map} $default - the default options map
+/// @param {map} $extension - the extending properties map
+/// @return {map} - a combined map of default and extension values
+///
+/// @example
+///     $new-map: merge(('red': #F00), ('red': #F34036));
+///
+/// @since 1.0.0
+@function merge($default, $extension) {
+    @return map-merge($default, $extension);
+}
+
+/// Returns a rem value conversion for a pixel sizing
+///
+/// @param {number} $value - the pixel value to be converted
+/// @return {number} - the rem conversion value
+///
+/// @example - scss Basic Usage
+///     font-size: rem(32px)
+///
+/// @example - css Output
+///     font-size: 2.25rem;
+///
+/// @access private
+/// @since 1.0.0
+@function rem($value) {
+    @return #{($value / 16)}rem;
+}
+
+/// Converts a non-relative unit (px) to a relative one (rem)
+///
+/// @param {number} $value - the pixel value to be converted
+/// @return {number} - the rem conversion value
+///
+/// @example - scss Basic Usage
+///     font-size: px-to-relative(32px)
+///
+/// @example - css Output
+///     font-size: 2.25rem;
+///
+/// @since 1.0.0
+@function px-to-relative($value) {
+    $unit: unit($value);
+
+    @if($unit == 'px') {
+        @return rem($value);
+    }
+
+    @return $value;
+}
