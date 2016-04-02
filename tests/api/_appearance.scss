@@ -1,0 +1,152 @@
+@include test-module('colour') {
+    @include test('should return the appropriate colour designated by a map-key') {
+        $actual: colour('test-grey');
+        $expected: #666;
+
+        @include assert-equal($actual, $expected);
+    }
+}
+
+@include test-module('tint-raw') {
+    @include test('should return a tinted version of a raw colour') {
+        $actual: tint-raw(#FF0000);
+        $expected: #FF4040;
+
+        @include assert-equal($actual, $expected);
+    }
+}
+
+@include test-module('tint-raw intensity') {
+    @include test('should return a tinted version of a raw colour modified by intensity') {
+        $actual: tint-raw(#FF0000, 50);
+        $expected: #FF8080;
+
+        @include assert-equal($actual, $expected);
+    }
+}
+
+@include test-module('tint') {
+    @include test('should return a tinted version of a colour key value') {
+        $actual: tint('test-grey');
+        $expected: #8c8c8c;
+
+        @include assert-equal($actual, $expected);
+    }
+}
+
+@include test-module('tint intensity') {
+    @include test('should return a tinted version of a colour key value modified by intensity') {
+        $actual: tint('test-grey', 50);
+        $expected: #b3b3b3;
+
+        @include assert-equal($actual, $expected);
+    }
+}
+
+@include test-module('shade-raw') {
+    @include test('should return a shaded version of a raw colour') {
+        $actual: shade-raw(#FF0000);
+        $expected: #BF0000;
+
+        @include assert-equal($actual, $expected);
+    }
+}
+
+@include test-module('shade-raw intensity') {
+    @include test('should return a shaded version of a raw colour modified by intensity') {
+        $actual: shade-raw(#FF0000, 75);
+        $expected: #400000;
+
+        @include assert-equal($actual, $expected);
+    }
+}
+
+@include test-module('shade') {
+    @include test('should return a shaded version of a colour key value') {
+        $actual: shade('test-grey');
+        $expected: #4d4d4d;
+
+        @include assert-equal($actual, $expected);
+    }
+}
+
+@include test-module('shade intensity') {
+    @include test('should return a shaded version of a colour key value modified by intensity') {
+        $actual: shade('test-grey', 50);
+        $expected: #333333;
+
+        @include assert-equal($actual, $expected);
+    }
+}
+
+@include test-module('trans-raw') {
+    @include test('should return a transparent version of a raw colour') {
+        $actual: trans-raw(#FF0000);
+        $expected: rgba(255, 0, 0, 0.5);
+
+        @include assert-equal($actual, $expected);
+    }
+}
+
+@include test-module('trans-raw intensity') {
+    @include test('should return a transparent version of a raw colour modified by intensity') {
+        $actual: trans-raw(#FF0000, 0.1);
+        $expected: rgba(255, 0, 0, 0.9);
+
+        @include assert-equal($actual, $expected);
+    }
+}
+
+@include test-module('trans') {
+    @include test('should return a transparent version of a colour key value') {
+        $actual: trans('test-grey');
+        $expected: rgba(102, 102, 102, 0.5);
+
+        @include assert-equal($actual, $expected);
+    }
+}
+
+@include test-module('trans intensity') {
+    @include test('should return a transparent version of a colour key value modified by intensity') {
+        $actual: trans('test-grey', 0.1);
+        $expected: rgba(102, 102, 102, 0.9);
+
+        @include assert-equal($actual, $expected);
+    }
+}
+
+@include test-module('border-radius') {
+    @include test('should return a border-radius default value') {
+        $actual: border-radius();
+        $expected: 5px;
+
+        @include assert-equal($actual, $expected);
+    }
+}
+
+@include test-module('border-radius value') {
+    @include test('should return a border-radius value by key') {
+        $actual: border-radius('test-size');
+        $expected: 18px;
+
+        @include assert-equal($actual, $expected);
+    }
+}
+
+@include test-module('border-width') {
+    @include test('should return a border width default value') {
+        $actual: border-width();
+        $expected: 1px;
+
+        @include assert-equal($actual, $expected);
+    }
+}
+
+@include test-module('border-width value') {
+    @include test('should return a border width value by key') {
+        $actual: border-width('test-width');
+        $expected: 5px;
+
+        @include assert-equal($actual, $expected);
+    }
+}

@@ -24,17 +24,12 @@
     "captain-git-hook": "^1.1.0",
     "node-sass": "^3.4.2",
     "postcss-cli": "^2.5.1",
+    "sass-true": "^2.0.3",
     "sassdoc": "^2.1.20"
   },
   "scripts": {
-    "autoprefix": "postcss --use autoprefixer --output css/radix.css css/radix.css",
-    "autoprefix-min": "postcss --use autoprefixer --output css/radix.min.css css/radix.min.css",
-    "build": "npm run clear && npm run compile-sass && npm run compile-sass-min && npm run autoprefix && npm run autoprefix-min",
-    "compile-sass": "node-sass --output-style expanded --source-map true --output css/ radix.scss --outFile css/radix.css",
-    "compile-sass-min": "node-sass --output-style compressed --source-map true --output css/ radix.scss css/radix.min.css",
-    "clear": "rm -rf css",
-    "docs": "sassdoc ./radix -c ./.sassdoc.json",
-    "pre-push": "npm run build && npm run docs",
-    "start": "npm run compile-sass -- --watch"
+    "api-docs": "sassdoc ./radix -c ./.sassdoc.json",
+    "pre-commit": "npm run test",
+    "test": "mocha ./tests/test_sass.js"
   }
 }
