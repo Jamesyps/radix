@@ -129,6 +129,26 @@
     max-width: 100%;
 }
 
+/// Outputs a z-index property using the layer function. Can be layered within a group by setting a priority.
+///
+/// @param {string} $key - the key / label of the size value
+/// @param {number} $priority [0] - an additional layer within the group (.nav-logo may need to be higher within the navigation group)
+///
+/// @example - scss Basic Usage
+///     .fixed-nav {
+///        @include rdx-layer('navigation', 50);
+///     }
+///
+/// @example - css Output
+///     .fixed-nav {
+///        z-index: 2050;
+///     }
+///
+/// @since 1.0.0
+@mixin rdx-layer($key, $priority: 0) {
+    z-index: layer($key) + $priority;
+}
+
 /// Horizontally centers an element on screen
 ///
 /// @param {string} $position [relative] - the position property the element should use

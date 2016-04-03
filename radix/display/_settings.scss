@@ -6,3 +6,16 @@
 /// @group Display
 /// @author James Wigger <james@rootstudio.co.uk>
 ////
+
+/// The system default z-index layers
+/// This should not be modified directly.
+///
+/// @access private
+/// @since 1.0.0
+$radix-layers: merge((
+    'root': 1,
+    'header': 1000,
+    'navigation': 2000,
+    'overlay': 3000,
+    'modal': 4000
+), $user-layers);

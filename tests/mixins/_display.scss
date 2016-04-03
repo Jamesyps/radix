@@ -90,6 +90,28 @@
         }
     }
 
+    @include test('rdx-layer [mixin]') {
+        @include assert('Outputs z-index layer with default priority') {
+            @include input() {
+                @include rdx-layer('test-layer');
+            }
+
+            @include expect() {
+                z-index: 5000;
+            }
+        }
+
+        @include assert('Outputs z-index layer with increased priority') {
+            @include input() {
+                @include rdx-layer('test-layer', 999);
+            }
+
+            @include expect() {
+                z-index: 5999;
+            }
+        }
+    }
+
     @include test('rdx-center-x [mixin]') {
         @include assert('Outputs css properties to center horizontally in any parent with defaults') {
             @include input() {

@@ -5,3 +5,24 @@
 /// @group Display
 /// @author James Wigger <james@rootstudio.co.uk>
 ////
+
+/// Returns a z-index layer value from a key
+///
+/// @require {map} $radix-layers - the Radix layers map
+/// @param {string} $key - the key / label of the size value
+/// @return {string} - a size value for the key
+///
+/// @example - scss Basic Usage
+///     z-index: layer('modal');
+///
+/// @example - css Output
+///     z-index: 4000;
+///
+/// @since 1.0.0
+@function layer($key) {
+    @if not map-has-key($radix-layers, $key) {
+        @error 'No layer exists with the key: #{$key}';
+    }
+
+    @return map-get($radix-layers, $key);
+}

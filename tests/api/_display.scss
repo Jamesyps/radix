@@ -1,0 +1,8 @@
+@include test-module('layer') {
+    @include test('should return the z-index layer value by map key') {
+        $actual: layer('test-layer');
+        $expected: 5000;
+
+        @include assert-equal($actual, $expected);
+    }
+}
