@@ -1,0 +1,188 @@
+@include test-module('Display') {
+    @include test('rdx-left [mixin]') {
+        @include assert('Outputs a left float rule') {
+            @include input() {
+                @include rdx-left();
+            }
+
+            @include expect() {
+                float: left;
+            }
+        }
+    }
+
+    @include test('rdx-right [mixin]') {
+        @include assert('Outputs a right float rule') {
+            @include input() {
+                @include rdx-right();
+            }
+
+            @include expect() {
+                float: right;
+            }
+        }
+    }
+
+    @include test('rdx-clearfix [mixin]') {
+        @include assert('Outputs a clearfix after pseudoelement') {
+            @include input() {
+                @include rdx-clearfix();
+            }
+
+            @include expect() {
+                &:after {
+                    display: block;
+                    clear: both;
+                    visibility: hidden;
+                    height: 0;
+                    font-size: 0;
+                    content: ' ';
+                }
+            }
+        }
+    }
+
+    @include test('rdx-display [mixin]') {
+        @include assert('Outputs a display property with defaults') {
+            @include input() {
+                @include rdx-display();
+            }
+
+            @include expect() {
+                display: block;
+            }
+        }
+
+        @include assert('Outputs a display property with set value') {
+            @include input() {
+                @include rdx-display('inline-block');
+            }
+
+            @include expect() {
+                display: inline-block;
+            }
+        }
+    }
+
+    @include test('rdx-fill [mixin]') {
+        @include assert('Outputs css properties to fill width of parent') {
+            @include input() {
+                @include rdx-fill();
+            }
+
+            @include expect() {
+                display: block;
+                width: 100%;
+            }
+        }
+    }
+
+    @include test('rdx-fit [mixin]') {
+        @include assert('Outputs css properties to fit parent minimum width') {
+            @include input() {
+                @include rdx-fit();
+            }
+
+            @include expect() {
+                display: block;
+                max-width: 100%;
+            }
+        }
+    }
+
+    @include test('rdx-center-x [mixin]') {
+        @include assert('Outputs css properties to center horizontally in any parent with defaults') {
+            @include input() {
+                @include rdx-center-x();
+            }
+
+            @include expect() {
+                position: relative;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+
+        @include assert('Outputs css properties to center horizontally in any parent with absolute positioning') {
+            @include input() {
+                @include rdx-center-x('absolute');
+            }
+
+            @include expect() {
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+    }
+
+    @include test('rdx-center-y [mixin]') {
+        @include assert('Outputs css properties to center vertically in any parent with defaults') {
+            @include input() {
+                @include rdx-center-y();
+            }
+
+            @include expect() {
+                position: relative;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+        }
+
+        @include assert('Outputs css properties to center vertically in any parent with absolute positioning') {
+            @include input() {
+                @include rdx-center-y('absolute');
+            }
+
+            @include expect() {
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+        }
+    }
+
+    @include test('rdx-overlay [mixin]') {
+        @include assert('Outputs css properties overlay parent content with defaults') {
+            @include input() {
+                @include rdx-overlay();
+            }
+
+            @include expect() {
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+            }
+        }
+
+        @include assert('Outputs css properties overlay parent content with set position property') {
+            @include input() {
+                @include rdx-overlay('relative');
+            }
+
+            @include expect() {
+                position: relative;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+            }
+        }
+
+        @include assert('Outputs css properties overlay parent content with set offsets') {
+            @include input() {
+                @include rdx-overlay($offset: 15px);
+            }
+
+            @include expect() {
+                position: absolute;
+                top: 15px;
+                right: 15px;
+                bottom: 15px;
+                left: 15px;
+            }
+        }
+    }
+}

@@ -85,7 +85,7 @@
 ///
 /// @since 1.0.0
 @mixin rdx-display($property: 'block') {
-    display: $property;
+    display: unquote($property);
 }
 
 /// Applies styles to an element that will allow it to fill the width of its parent
@@ -147,7 +147,7 @@
 ///
 /// @since 1.0.0
 @mixin rdx-center-x($position: 'relative') {
-    position: $position;
+    position: unquote($position);
     left: 50%;
     transform: translateX(-50%);
 }
@@ -170,7 +170,7 @@
 ///
 /// @since 1.0.0
 @mixin rdx-center-y($position: 'relative') {
-    position: $position;
+    position: unquote($position);
     top: 50%;
     transform: translateY(-50%);
 }
@@ -196,7 +196,7 @@
 ///
 /// @since 1.0.0
 @mixin rdx-overlay($position: 'absolute', $offset: 0) {
-    position: $position;
+    position: unquote($position);
     top: $offset;
     right: $offset;
     bottom: $offset;

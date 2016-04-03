@@ -13,5 +13,6 @@
 
 // Mixin / implementation tests
 @import 'mixins/appearance';
+@import 'mixins/display';
 
 @include report();
