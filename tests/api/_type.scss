@@ -1,0 +1,97 @@
+@include test-module('font-stack') {
+    @include test('should return a default font-family list') {
+        $actual: font-stack();
+        $expected: (sans-serif);
+
+        @include assert-equal($actual, $expected);
+    }
+}
+
+@include test-module('font-stack value') {
+    @include test('should return a font-family list by key') {
+        $actual: font-stack('test-stack');
+        $expected: ('georgia', serif);
+
+        @include assert-equal($actual, $expected);
+    }
+}
+
+@include test-module('font-weight') {
+    @include test('should return a font weight value by key') {
+        $values: ('test-prop', 'test-value');
+        $expected-values: (bold, 500);
+
+        @for $index from 1 through length($values) {
+            $value: nth($values, $index);
+
+            $actual-value: font-weight($value);
+            $expected-value: nth($expected-values, $index);
+
+            @include assert-equal($actual-value, $expected-value);
+        }
+    }
+}
+
+@include test-module('font-size-raw') {
+    @include test('should return an unmodified font size value by key') {
+        $values: ('test-abs', 'test-rel');
+        $expected-values: (10px, 1.5rem);
+
+        @for $index from 1 through length($values) {
+            $value: nth($values, $index);
+
+            $actual-value: font-size-raw($value);
+            $expected-value: nth($expected-values, $index);
+
+            @include assert-equal($actual-value, $expected-value);
+        }
+    }
+}
+
+@include test-module('font-size') {
+    @include test('should return a relative unit font size value by key') {
+        $values: ('test-abs', 'test-rel');
+        $expected-values: (0.625rem, 1.5rem);
+
+        @for $index from 1 through length($values) {
+            $value: nth($values, $index);
+
+            $actual-value: font-size($value);
+            $expected-value: nth($expected-values, $index);
+
+            @include assert-equal($actual-value, $expected-value);
+        }
+    }
+}
+
+@include test-module('line-height-raw') {
+    @include test('should return an unmodified line-height value by key') {
+        $values: ('test-abs', 'test-rel');
+        $expected-values: (15px, 2rem);
+
+        @for $index from 1 through length($values) {
+            $value: nth($values, $index);
+
+            $actual-value: line-height-raw($value);
+            $expected-value: nth($expected-values, $index);
+
+            @include assert-equal($actual-value, $expected-value);
+        }
+    }
+}
+
+@include test-module('line-height') {
+    @include test('should return a relative unit line-height value by key') {
+        $values: ('test-abs', 'test-rel');
+        $expected-values: (0.9375rem, 2rem);
+
+        @for $index from 1 through length($values) {
+            $value: nth($values, $index);
+
+            $actual-value: line-height($value);
+            $expected-value: nth($expected-values, $index);
+
+            @include assert-equal($actual-value, $expected-value);
+        }
+    }
+}

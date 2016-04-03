@@ -28,7 +28,7 @@
 
 /// Returns a font weighting by key
 ///
-/// @param {string} $key [regular] - the key / label of the font weight
+/// @param {string} $key - the key / label of the font weight
 /// @return {number} - the font weight value
 ///
 /// @example - scss Basic Usage
@@ -38,7 +38,7 @@
 ///     font-weight: 600;
 ///
 /// @since 1.0.0
-@function font-weight($key: 'regular') {
+@function font-weight($key) {
     @if not map-has-key($radix-font-weights, $key) {
         @error 'No font weighting exists with the key: #{$key}';
     }
@@ -48,8 +48,8 @@
 
 /// Returns a font-size by key without modification
 ///
-/// @param {string} $key [md] - the key / label of the font size group
-/// @return {number} - a rem value of the size
+/// @param {string} $key - the key / label of the font size group
+/// @return {number} - a value of the size
 ///
 /// @example - scss Basic Usage
 ///     font-size: font-size-raw('xl');
@@ -58,7 +58,7 @@
 ///     font-size: 48px;
 ///
 /// @since 1.0.0
-@function font-size-raw($key: 'md') {
+@function font-size-raw($key) {
     @if not map-has-key($radix-font-sizes, $key) {
         @error 'No font size exists with the key: #{$key}';
     }
@@ -70,7 +70,7 @@
 
 /// Returns a relative font-size by key
 ///
-/// @param {string} $key [md] - the key / label of the font size group
+/// @param {string} $key - the key / label of the font size group
 /// @return {number} - a rem value of the size
 ///
 /// @example - scss Basic Usage
@@ -80,14 +80,14 @@
 ///     font-size: 3rem;
 ///
 /// @since 1.0.0
-@function font-size($key: 'md') {
+@function font-size($key) {
     @return px-to-relative(font-size-raw($key));
 }
 
 /// Returns a line-height by key without modification
 ///
-/// @param {string} $key [md] - the key / label of the line-height group
-/// @return {number} - a rem value of the size
+/// @param {string} $key - the key / label of the line-height group
+/// @return {number} - a value of the size
 ///
 /// @example - scss Basic Usage
 ///     line-height: line-height-raw('xl');
@@ -96,7 +96,7 @@
 ///     line-height: 52px;
 ///
 /// @since 1.0.0
-@function line-height-raw($key: 'default') {
+@function line-height-raw($key) {
     @if not map-has-key($radix-font-sizes, $key) {
         @error 'No font size exists with the key: #{$key}';
     }
@@ -108,7 +108,7 @@
 
 /// Returns a relative line-height by key
 ///
-/// @param {string} $key [md] - the key / label of the line-height group
+/// @param {string} $key - the key / label of the line-height group
 /// @return {number} - a rem value of the size
 ///
 /// @example - scss Basic Usage
@@ -118,6 +118,6 @@
 ///     line-height: 3.25rem;
 ///
 /// @since 1.0.0
-@function line-height($key: 'md') {
+@function line-height($key) {
     @return px-to-relative(line-height-raw($key));
 }

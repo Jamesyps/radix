@@ -33,3 +33,19 @@ $user-spacing: (
     'test-abs': 48px,
     'test-rel': 5rem
 );
+
+// Type
+$user-font-stack: (
+    'body': (sans-serif),
+    'test-stack': ('georgia', serif)
+);
+
+$user-font-sizes: (
+    'test-abs': (10px, 15px),
+    'test-rel': (1.5rem, 2rem)
+);
+
+$user-font-weights: (
+    'test-prop': bold,
+    'test-value': 500
+);
