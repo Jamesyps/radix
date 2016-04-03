@@ -17,7 +17,6 @@
 /// @example - css Output
 ///     width: 41.66667%;
 ///
-/// @access private
 /// @since 1.0.0
 @function column-width($span) {
     @return ($span / $radix-gs-columns) * 100%;

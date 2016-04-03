@@ -1,0 +1,8 @@
+@include test-module('column-width') {
+    @include test('should output a width based on the column total columns to span') {
+        $actual: column-width(3);
+        $expected: 75%;
+
+        @include assert-equal($actual, $expected);
+    }
+}
