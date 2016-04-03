@@ -209,3 +209,91 @@
         @content;
     }
 }
+
+/// Hides content once a certain width has been exceeded
+///
+/// @param {string} $key - the name of the breakpoint to use
+///
+/// @example - scss Basic Usage
+///     .mobile-style {
+///        @include rdx-hide-from('xs');
+///     }
+///
+/// @example - css Output
+///     @media screen and (min-width: 34em) {
+///        .mobile-style {
+///            display: none;
+///        }
+///     }
+///
+/// @since 1.0.0
+@mixin rdx-hide-from($key) {
+    @mixin rdx-mq-from($key) {
+        display: none;
+    }
+}
+
+/// Displays content once a certain width has been exceeded
+///
+/// @param {string} $key - the name of the breakpoint to use
+///
+/// @example - scss Basic Usage
+///     .mobile-style {
+///        @include rdx-show-from('xs');
+///     }
+///
+/// @example - css Output
+///     @media screen and (max-width: 34em) {
+///        .mobile-style {
+///            display: none;
+///        }
+///     }
+///
+/// @since 1.0.0
+@mixin rdx-show-from($key) {
+    @include rdx-hide-until($key);
+}
+
+/// Displays content once a certain width has been exceeded
+///
+/// @param {string} $key - the name of the breakpoint to use
+///
+/// @example - scss Basic Usage
+///     .mobile-style {
+///        @include rdx-show-from('xs');
+///     }
+///
+/// @example - css Output
+///     @media screen and (max-width: 34em) {
+///        .mobile-style {
+///            display: none;
+///        }
+///     }
+///
+/// @since 1.0.0
+@mixin rdx-hide-until($key) {
+    @include rdx-mq-until($key) {
+        display: none;
+    }
+}
+
+/// Hides content once a certain width has been exceeded
+///
+/// @param {string} $key - the name of the breakpoint to use
+///
+/// @example - scss Basic Usage
+///     .mobile-style {
+///        @include rdx-hide-from('xs');
+///     }
+///
+/// @example - css Output
+///     @media screen and (min-width: 34em) {
+///        .mobile-style {
+///            display: none;
+///        }
+///     }
+///
+/// @since 1.0.0
+@mixin rdx-show-until($key) {
+    @include rdx-hide-from($key);
+}
