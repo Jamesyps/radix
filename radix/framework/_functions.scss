@@ -34,7 +34,25 @@
 /// @access private
 /// @since 1.0.0
 @function rem($value) {
-    @return #{($value / 16)}rem;
+    @return ($value / 16) * 1rem;
+}
+
+/// Returns a unitless number
+///
+/// @param {number} $value - the value to be modified
+///
+/// @example - scss Basic Usage
+///     font-size: strip-units(32px)
+///
+/// @example - css Output
+///     font-size: 32;
+///
+/// @access private
+/// @author Miriam Suzanne
+/// @link http://stackoverflow.com/a/12335841
+/// @since 1.0.0
+@function strip-units($value) {
+    @return $value / ($value * 0 + 1);
 }
 
 /// Converts a non-relative unit (px) to a relative one (rem)
@@ -51,9 +69,10 @@
 /// @since 1.0.0
 @function px-to-relative($value) {
     $unit: unit($value);
+    $unitless-value: strip-units($value);
 
     @if($unit == 'px') {
-        @return rem($value);
+        @return rem($unitless-value);
     }
 
     @return $value;

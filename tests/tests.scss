@@ -3,6 +3,12 @@
 @import '../radix';
 
 @import 'api/appearance';
+@import 'api/display';
+@import 'api/framework';
+@import 'api/layout';
+@import 'api/responsive';
+@import 'api/spacing';
+@import 'api/type';
 
 $true-terminal-output: false;
 @include report();

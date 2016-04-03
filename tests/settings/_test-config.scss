@@ -1,9 +1,16 @@
+// Set test variables and
+// immutable default values
+
+// True
+$true-terminal-output: false;
+
+// Appearance
 $user-colours: (
     'test-grey': #666
 );
 
 $user-radii: (
-    'md': 5px, // ensure default remains static
+    'md': 5px,
     'test-size': 18px
 );
 
