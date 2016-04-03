@@ -1,5 +1,5 @@
-@include test-module('spacing-raw') {
-    @include test('should return an unmodified value from the spacing map by key') {
+@include test-module('spacing') {
+    @include test('should return an unmodified value from the spacing map by key [raw]') {
         $values: ('test-abs', 'test-rel');
         $expected-values: (48px, 5rem);
 
@@ -12,9 +12,7 @@
             @include assert-equal($actual-value, $expected-value);
         }
     }
-}
 
-@include test-module('spacing') {
     @include test('should return a relative unit value from the spacing map by key') {
         $values: ('test-abs', 'test-rel');
         $expected-values: (3rem, 5rem);
@@ -29,4 +27,3 @@
         }
     }
 }
-

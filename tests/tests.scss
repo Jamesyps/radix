@@ -2,6 +2,7 @@
 @import 'settings/test-config';
 @import '../radix';
 
+// API tests
 @import 'api/appearance';
 @import 'api/display';
 @import 'api/framework';
@@ -9,5 +10,8 @@
 @import 'api/responsive';
 @import 'api/spacing';
 @import 'api/type';
+
+// Mixin / implementation tests
+@import 'mixins/appearance';
 
 @include report();

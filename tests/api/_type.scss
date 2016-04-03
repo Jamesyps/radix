@@ -5,9 +5,7 @@
 
         @include assert-equal($actual, $expected);
     }
-}
 
-@include test-module('font-stack value') {
     @include test('should return a font-family list by key') {
         $actual: font-stack('test-stack');
         $expected: ('georgia', serif);
@@ -32,8 +30,8 @@
     }
 }
 
-@include test-module('font-size-raw') {
-    @include test('should return an unmodified font size value by key') {
+@include test-module('font-size') {
+    @include test('should return an unmodified font size value by key [raw]') {
         $values: ('test-abs', 'test-rel');
         $expected-values: (10px, 1.5rem);
 
@@ -46,9 +44,7 @@
             @include assert-equal($actual-value, $expected-value);
         }
     }
-}
 
-@include test-module('font-size') {
     @include test('should return a relative unit font size value by key') {
         $values: ('test-abs', 'test-rel');
         $expected-values: (0.625rem, 1.5rem);
@@ -64,8 +60,8 @@
     }
 }
 
-@include test-module('line-height-raw') {
-    @include test('should return an unmodified line-height value by key') {
+@include test-module('line-height') {
+    @include test('should return an unmodified line-height value by key [raw]') {
         $values: ('test-abs', 'test-rel');
         $expected-values: (15px, 2rem);
 
@@ -78,9 +74,7 @@
             @include assert-equal($actual-value, $expected-value);
         }
     }
-}
 
-@include test-module('line-height') {
     @include test('should return a relative unit line-height value by key') {
         $values: ('test-abs', 'test-rel');
         $expected-values: (0.9375rem, 2rem);
