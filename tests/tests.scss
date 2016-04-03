@@ -1,3 +1,4 @@
+// System
 @import 'true';
 @import 'settings/test-config';
 @import '../radix';
@@ -14,5 +15,11 @@
 // Mixin / implementation tests
 @import 'mixins/appearance';
 @import 'mixins/display';
+@import 'mixins/framework';
+@import 'mixins/layout';
+@import 'mixins/responsive';
+@import 'mixins/spacing';
+@import 'mixins/type';
 
+// Output test results
 @include report();

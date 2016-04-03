@@ -1,0 +1,152 @@
+@include test-module('Layout') {
+    @include test('rdx-container [mixin]') {
+        @include assert('Should output styles for a grid container') {
+            @include input() {
+                @include rdx-container();
+            }
+
+            @include expect() {
+                position: relative;
+                margin: 0 auto;
+                padding: 0 5%;
+                max-width: 990px;
+            }
+        }
+
+        @include assert('Should output styles for a grid container without limiting width') {
+            @include input() {
+                @include rdx-container(false);
+            }
+
+            @include expect() {
+                position: relative;
+                margin: 0 auto;
+                padding: 0 5%;
+            }
+        }
+    }
+
+    @include test('rdx-grid [mixin]') {
+        @include assert('Should output base styles for a flexbox grid') {
+            @include input() {
+                @include rdx-grid();
+            }
+
+            @include expect() {
+                display: flex;
+            }
+        }
+
+        // Not current possible to test: see https://github.com/oddbird/true/issues/42
+        //@include assert('Should output grid styles for auto-wrapping columns') {
+        //    @include input() {
+        //        @include rdx-grid($auto: true);
+        //    }
+        //
+        //    @include expect() {
+        //        display: flex;
+        //        flex-wrap: wrap;
+        //
+        //        > * {
+        //            flex: none;
+        //        }
+        //    }
+        //}
+
+        @include assert('Should output styles for centering columns horizontally') {
+            @include input() {
+                @include rdx-grid($center-x: true);
+            }
+
+            @include expect() {
+                display: flex;
+                justify-content: center;
+            }
+        }
+
+        @include assert('Should output styles for centering columns vertically') {
+            @include input() {
+                @include rdx-grid($center-y: true);
+            }
+
+            @include expect() {
+                display: flex;
+                align-items: center;
+            }
+        }
+
+        // Not current possible to test: see https://github.com/oddbird/true/issues/42
+        //@include assert('Should output styles for gutterless columns') {
+        //    @include input() {
+        //        @include rdx-grid($flush: true);
+        //    }
+        //
+        //    @include expect() {
+        //        display: flex;
+        //
+        //        > * {
+        //            margin: 0;
+        //            padding: 0;
+        //        }
+        //    }
+        //}
+
+        @include assert('Should output styles for reversing column order horizontally') {
+            @include input() {
+                @include rdx-grid($reverse: true);
+            }
+
+            @include expect() {
+                display: flex;
+                flex-direction: row-reverse;
+            }
+        }
+
+        @include assert('Should output styles for reversing column order vertically') {
+            @include input() {
+                @include rdx-grid($reverse: true, $stack: true);
+            }
+
+            @include expect() {
+                display: flex;
+                flex-direction: column-reverse;
+            }
+        }
+
+        @include assert('Should output styles for displaying columns vertically') {
+            @include input() {
+                @include rdx-grid($stack: true);
+            }
+
+            @include expect() {
+                display: flex;
+                flex-direction: column;
+            }
+        }
+    }
+
+    @include test('rdx-span [mixin]') {
+        @include assert('Should output a width rule calculated by column numbers') {
+            @include input() {
+                @include rdx-span(2);
+            }
+
+            @include expect() {
+                flex: 0;
+                width: 50%;
+            }
+        }
+    }
+
+    @include test('rdx-offset [mixin]') {
+        @include assert('Should output a margin offset rule calculated by column numbers') {
+            @include input() {
+                @include rdx-offset(3);
+            }
+
+            @include expect() {
+                margin-left: 75%;
+            }
+        }
+    }
+}

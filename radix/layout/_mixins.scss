@@ -28,7 +28,7 @@
     margin: 0 auto;
     padding: 0 $radix-container-padding;
 
-    @if($fixed) {
+    @if ($fixed) {
         max-width: $radix-container-width;
     }
 }
@@ -92,7 +92,7 @@
         }
     }
 
-    @if $stack {
+    @if $stack AND $reverse == false {
         flex-direction: column;
     }
 }
