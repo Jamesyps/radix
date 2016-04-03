@@ -1,0 +1,36 @@
+@include test-module('Type') {
+    @include test('rdx-font-size [mixin]') {
+        @include assert('should output font size / line height for key') {
+            @include input() {
+                @include rdx-font-size('test-abs');
+            }
+
+            @include expect() {
+                font-size: 0.625rem;
+                line-height: 0.9375rem;
+            }
+        }
+    }
+
+    @include test('rdx-font-weight [mixin]') {
+        @include assert('should output a default font weight') {
+            @include input() {
+                @include rdx-font-weight();
+            }
+
+            @include expect() {
+                font-weight: 400;
+            }
+        }
+
+        @include assert('should output a font weight by key') {
+            @include input() {
+                @include rdx-font-weight('test-value');
+            }
+
+            @include expect() {
+                font-weight: 500;
+            }
+        }
+    }
+}

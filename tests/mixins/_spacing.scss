@@ -1,0 +1,149 @@
+@include test-module('Spacing') {
+    @include test('rdx-margin [mixin]') {
+        @include assert('Should output margin with default direction') {
+            @include input() {
+                @include rdx-margin($key: 'test-abs');
+            }
+
+            @include expect() {
+                margin: 3rem;
+            }
+        }
+
+        @include assert('Should output margin along the x-axis') {
+            @include input() {
+                @include rdx-margin($direction: 'x', $key: 'test-abs');
+            }
+
+            @include expect() {
+                margin-right: 3rem;
+                margin-left: 3rem;
+            }
+        }
+
+        @include assert('Should output margin along the y-axis') {
+            @include input() {
+                @include rdx-margin($direction: 'y', $key: 'test-abs');
+            }
+
+            @include expect() {
+                margin-top: 3rem;
+                margin-bottom: 3rem;
+            }
+        }
+
+        @include assert('Should output a top margin') {
+            @include input() {
+                @include rdx-margin($direction: 't', $key: 'test-abs');
+            }
+
+            @include expect() {
+                margin-top: 3rem;
+            }
+        }
+
+        @include assert('Should output a right margin') {
+            @include input() {
+                @include rdx-margin($direction: 'r', $key: 'test-abs');
+            }
+
+            @include expect() {
+                margin-right: 3rem;
+            }
+        }
+
+        @include assert('Should output a bottom margin') {
+            @include input() {
+                @include rdx-margin($direction: 'b', $key: 'test-abs');
+            }
+
+            @include expect() {
+                margin-bottom: 3rem;
+            }
+        }
+
+        @include assert('Should output a left margin') {
+            @include input() {
+                @include rdx-margin($direction: 'l', $key: 'test-abs');
+            }
+
+            @include expect() {
+                margin-left: 3rem;
+            }
+        }
+    }
+
+    @include test('rdx-padding [mixin]') {
+        @include assert('Should output padding with default direction') {
+            @include input() {
+                @include rdx-padding($key: 'test-abs');
+            }
+
+            @include expect() {
+                padding: 3rem;
+            }
+        }
+
+        @include assert('Should output padding along the x-axis') {
+            @include input() {
+                @include rdx-padding($direction: 'x', $key: 'test-abs');
+            }
+
+            @include expect() {
+                padding-right: 3rem;
+                padding-left: 3rem;
+            }
+        }
+
+        @include assert('Should output padding along the y-axis') {
+            @include input() {
+                @include rdx-padding($direction: 'y', $key: 'test-abs');
+            }
+
+            @include expect() {
+                padding-top: 3rem;
+                padding-bottom: 3rem;
+            }
+        }
+
+        @include assert('Should output top padding') {
+            @include input() {
+                @include rdx-padding($direction: 't', $key: 'test-abs');
+            }
+
+            @include expect() {
+                padding-top: 3rem;
+            }
+        }
+
+        @include assert('Should output right padding') {
+            @include input() {
+                @include rdx-padding($direction: 'r', $key: 'test-abs');
+            }
+
+            @include expect() {
+                padding-right: 3rem;
+            }
+        }
+
+        @include assert('Should output bottom padding') {
+            @include input() {
+                @include rdx-padding($direction: 'b', $key: 'test-abs');
+            }
+
+            @include expect() {
+                padding-bottom: 3rem;
+            }
+        }
+
+        @include assert('Should output left padding') {
+            @include input() {
+                @include rdx-padding($direction: 'l', $key: 'test-abs');
+            }
+
+            @include expect() {
+                padding-left: 3rem;
+            }
+        }
+    }
+}
