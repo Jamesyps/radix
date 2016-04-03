@@ -13,12 +13,12 @@
 /// @access private
 /// @since 1.0.0
 $radix-colours: merge((
-    'default': #ECF0F1,
-    'primary': #3498DB,
-    'secondary': #34495E,
-    'success': #00C67C,
-    'error': #EF2F2A,
-    'notice': #F1C40E
+    'default': #ECECED,
+    'primary': #00ADB5,
+    'secondary': #47555E,
+    'success': #52AA3F,
+    'error': #FA5554,
+    'notice': #FEC057
 ), $user-colours);
 
 /// The system default border-radius map that users can extend or modify.
