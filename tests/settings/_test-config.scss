@@ -22,3 +22,14 @@ $user-border-widths: (
 // Layout
 $user-gs-columns: 4;
 $user-gs-gutter: 10px;
+
+// Responsive
+$user-breakpoints: (
+    'test-bp': 128em
+);
+
+// Spacing
+$user-spacing: (
+    'test-abs': 48px,
+    'test-rel': 5rem
+);

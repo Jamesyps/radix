@@ -1,0 +1,8 @@
+@include test-module('breakpoint') {
+    @include test('should return a breakpoint value for a given key') {
+        $actual: breakpoint('test-bp');
+        $expected: 128em;
+
+        @include assert-equal($actual, $expected);
+    }
+}
