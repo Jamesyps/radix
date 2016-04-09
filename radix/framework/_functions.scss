@@ -71,7 +71,7 @@
     $unit: unit($value);
     $unitless-value: strip-units($value);
 
-    @if($unit == 'px') {
+    @if($unit == 'px' OR unitless($value)) {
         @return rem($unitless-value);
     }
 
