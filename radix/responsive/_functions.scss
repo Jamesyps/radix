@@ -6,6 +6,24 @@
 /// @author James Wigger <james@rootstudio.co.uk>
 ////
 
+/// Returns the settings map from the merged
+/// radix and user configuration
+///
+/// @require {map} $radix-breakpoints - the Radix breakpoints map
+/// @return {map} - the settings map
+///
+/// @example - scss Basic Usage
+///     @each $width in get-breakpoints() {
+///         @media only screen and (max-width: $value) {
+///
+///         }
+///     }
+///
+/// @since 1.0.0
+@function get-breakpoints() {
+    @return $radix-breakpoints;
+}
+
 /// Returns a breakpoint by key
 ///
 /// @param {string} $key - the key / label of the breakpoint

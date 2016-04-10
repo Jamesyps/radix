@@ -5,4 +5,18 @@
 
         @include assert-equal($actual, $expected);
     }
+
+    @include test('should return the full breakpoints map') {
+        $actual: get-breakpoints();
+        $expected: (
+            'test-bp': 128em,
+            'xs': 34em,
+            'sm': 45em,
+            'md': 59em,
+            'lg': 73em,
+            'xl': 86em
+        );
+
+        @include assert-equal($actual, $expected);
+    }
 }
