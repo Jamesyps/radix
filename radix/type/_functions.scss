@@ -6,10 +6,29 @@
 /// @author James Wigger <james@rootstudio.co.uk>
 ////
 
+/// Returns the font sizes map from the merged
+/// radix and user configuration
+///
+/// @require {map} $radix-font-sizes - the Radix font size map
+/// @return {map} - the settings map
+///
+/// @example - scss Basic Usage
+///     @each $key, $value in get-spacing() {
+///         .font-size-#{$key} {
+///             font-size: nth($value, 1);
+///             line-height: nth($value, 2);
+///         }
+///     }
+///
+/// @since 1.0.0
+@function get-font-sizes() {
+    @return $radix-font-sizes;
+}
+
 /// Returns the font weights map from the merged
 /// radix and user configuration
 ///
-/// @require {map} $radix-font-weights - the Radix spacing map
+/// @require {map} $radix-font-weights - the Radix font weight map
 /// @return {map} - the settings map
 ///
 /// @example - scss Basic Usage

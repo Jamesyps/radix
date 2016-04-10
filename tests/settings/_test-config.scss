@@ -69,7 +69,13 @@ $user-font-stack: (
 
 $user-font-sizes: (
     'test-abs': (10px, 15px),
-    'test-rel': (1.5rem, 2rem)
+    'test-rel': (1.5rem, 2rem),
+    'body': (1rem, 1.2rem),
+    'xs': (1rem, 1.2rem),
+    'sm': (1.333rem, 1.2rem),
+    'md': (1.777rem, 1.5rem),
+    'lg': (2.369rem, 2rem),
+    'xl': (3.157rem, 3rem)
 );
 
 $user-font-weights: (
