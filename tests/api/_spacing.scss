@@ -26,4 +26,19 @@
             @include assert-equal($actual-value, $expected-value);
         }
     }
+
+    @include test('should return the full spacing map') {
+        $actual: get-spacing();
+        $expected: (
+            'test-abs': 48px,
+            'test-rel': 5rem,
+            'xs': 0.3125rem,
+            'sm': 0.625rem,
+            'md': 1.25rem,
+            'lg': 2.5rem,
+            'xl': 5rem
+        );
+
+        @include assert-equal($actual, $expected);
+    }
 }

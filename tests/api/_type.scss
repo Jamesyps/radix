@@ -28,6 +28,22 @@
             @include assert-equal($actual-value, $expected-value);
         }
     }
+
+    @include test('should return the full font weight map') {
+        $actual: get-font-weights();
+        $expected: (
+            'test-prop': bold,
+            'test-value': 500,
+            'hairline': 100,
+            'light': 300,
+            'regular': 400,
+            'semibold': 600,
+            'bold': 700,
+            'black': 900
+        );
+
+        @include assert-equal($actual, $expected);
+    }
 }
 
 @include test-module('font-size') {

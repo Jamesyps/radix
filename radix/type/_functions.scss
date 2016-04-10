@@ -6,6 +6,24 @@
 /// @author James Wigger <james@rootstudio.co.uk>
 ////
 
+/// Returns the font weights map from the merged
+/// radix and user configuration
+///
+/// @require {map} $radix-font-weights - the Radix spacing map
+/// @return {map} - the settings map
+///
+/// @example - scss Basic Usage
+///     @each $key, $value in get-layers() {
+///         .weight-#{$key} {
+///             font-weight: $value;
+///         }
+///     }
+///
+/// @since 1.0.0
+@function get-font-weights() {
+    @return $radix-font-weights;
+}
+
 /// Returns a font stack by key
 ///
 /// @param {string} $key [body] - the key / label of the font stack

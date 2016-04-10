@@ -6,6 +6,24 @@
 /// @author James Wigger <james@rootstudio.co.uk>
 ////
 
+/// Returns the settings map from the merged
+/// radix and user configuration
+///
+/// @require {map} $radix-layers - the Radix layers map
+/// @return {map} - the settings map
+///
+/// @example - scss Basic Usage
+///     @each $key, $layer in get-layers() {
+///         .layer-#{$key} {
+///             z-index: $layer;
+///         }
+///     }
+///
+/// @since 1.0.0
+@function get-layers() {
+    @return $radix-layers;
+}
+
 /// Returns a z-index layer value from a key
 ///
 /// @require {map} $radix-layers - the Radix layers map

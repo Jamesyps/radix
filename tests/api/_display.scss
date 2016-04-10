@@ -5,4 +5,18 @@
 
         @include assert-equal($actual, $expected);
     }
+
+    @include test('should return the full layer map') {
+        $actual: get-layers();
+        $expected: (
+            'test-layer': 5000,
+            'root': 1,
+            'header': 1000,
+            'navigation': 2000,
+            'overlay': 3000,
+            'modal': 4000
+        );
+
+        @include assert-equal($actual, $expected);
+    }
 }

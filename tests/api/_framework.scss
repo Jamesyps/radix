@@ -1,4 +1,4 @@
-@include test-module('merge') {
+@include test-module('Framework') {
     @include test('should return the merged values of two maps') {
         $default-map: ('foo': 1, 'bar': #FFF, 'baz': 'hello world');
         $merge-map: ('foo': 'goodbye', 'baz': 15);
@@ -8,9 +8,7 @@
 
         @include assert-equal($actual, $expected);
     }
-}
 
-@include test-module('px-to-relative') {
     @include test('Should convert a non-relative unit into a relative one without modifying existing relative values') {
         $values: (32px, 16px, 32, 16, 4rem, 5em);
         $expected-values: (2rem, 1rem, 2rem, 1rem, 4rem, 5em);

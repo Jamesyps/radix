@@ -6,6 +6,24 @@
 /// @author James Wigger <james@rootstudio.co.uk>
 ////
 
+/// Returns the colours map from the merged
+/// radix and user configuration
+///
+/// @require {map} $radix-colours - the Radix colours map
+/// @return {map} - the settings map
+///
+/// @example - scss Basic Usage
+///     @each $key, $value in get-layers() {
+///         .bg-#{$key} {
+///             background-color: $value;
+///         }
+///     }
+///
+/// @since 1.0.0
+@function get-colours() {
+    @return $radix-colours;
+}
+
 /// Returns a colour value from the system colours map
 ///
 /// @require {map} $radix-colours - the Radix colours map

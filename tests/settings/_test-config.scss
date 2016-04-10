@@ -6,7 +6,13 @@ $true-terminal-output: false;
 
 // Appearance
 $user-colours: (
-    'test-grey': #666
+    'test-grey': #666,
+    'default': #ECECED,
+    'primary': #00ADB5,
+    'secondary': #47555E,
+    'success': #52AA3F,
+    'error': #FA5554,
+    'notice': #FEC057
 );
 
 $user-radii: (
@@ -20,7 +26,12 @@ $user-border-widths: (
 );
 
 $user-layers: (
-    'test-layer': 5000
+    'test-layer': 5000,
+    'root': 1,
+    'header': 1000,
+    'navigation': 2000,
+    'overlay': 3000,
+    'modal': 4000
 );
 
 // Layout
@@ -37,7 +48,12 @@ $user-breakpoints: (
 // Spacing
 $user-spacing: (
     'test-abs': 48px,
-    'test-rel': 5rem
+    'test-rel': 5rem,
+    'xs': 0.3125rem,
+    'sm': 0.625rem,
+    'md': 1.25rem,
+    'lg': 2.5rem,
+    'xl': 5rem
 );
 
 // Type
@@ -53,5 +69,11 @@ $user-font-sizes: (
 
 $user-font-weights: (
     'test-prop': bold,
-    'test-value': 500
+    'test-value': 500,
+    'hairline': 100,
+    'light': 300,
+    'regular': 400,
+    'semibold': 600,
+    'bold': 700,
+    'black': 900
 );

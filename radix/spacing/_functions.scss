@@ -6,6 +6,24 @@
 /// @author James Wigger <james@rootstudio.co.uk>
 ////
 
+/// Returns the spacing map from the merged
+/// radix and user configuration
+///
+/// @require {map} $radix-spacing - the Radix spacing map
+/// @return {map} - the settings map
+///
+/// @example - scss Basic Usage
+///     @each $key, $value in get-layers() {
+///         .margin-top-#{$key} {
+///             margin-top: $value;
+///         }
+///     }
+///
+/// @since 1.0.0
+@function get-spacing() {
+    @return $radix-spacing;
+}
+
 /// Returns a size value from the spacing map without modification
 ///
 /// @require {map} $radix-spacing - the Radix spacing map

@@ -5,6 +5,21 @@
 
         @include assert-equal($actual, $expected);
     }
+
+    @include test('should return the full colour map') {
+        $actual: get-colours();
+        $expected: (
+            'test-grey': #666,
+            'default': #ECECED,
+            'primary': #00ADB5,
+            'secondary': #47555E,
+            'success': #52AA3F,
+            'error': #FA5554,
+            'notice': #FEC057
+        );
+
+        @include assert-equal($actual, $expected);
+    }
 }
 
 @include test-module('tint') {
