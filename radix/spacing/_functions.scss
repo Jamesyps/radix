@@ -13,7 +13,7 @@
 /// @return {map} - the settings map
 ///
 /// @example - scss Basic Usage
-///     @each $key, $value in get-layers() {
+///     @each $key, $value in get-spacing() {
 ///         .margin-top-#{$key} {
 ///             margin-top: $value;
 ///         }
