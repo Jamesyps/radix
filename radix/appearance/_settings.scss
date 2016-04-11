@@ -17,8 +17,8 @@ $radix-colours: merge((
     'primary': #00ADB5,
     'secondary': #47555E,
     'success': #52AA3F,
-    'error': #FA5554,
-    'notice': #FEC057
+    'warning': #FEC057,
+    'error': #FA5554
 ), $user-colours);
 
 /// The system default border-radius map that users can extend or modify.
