@@ -5,3 +5,52 @@
 /// @group Appearance
 /// @author James Wigger <james@rootstudio.co.uk>
 ////
+
+/// Applies a border radius to an element in various orientations
+///
+/// @param {string} $corner [a]- Apply rounded borders to corners. Possible values are:
+/// * <code>a</code> (all)
+/// * <code>t</code> (top)
+/// * <code>r</code> (right)
+/// * <code>b</code> (bottom)
+/// * <code>l</code> (left)
+/// @param {string} $key [md] - the key / label of the radius value
+///
+/// @example - scss Basic Usage
+///     .button {
+///        @include rdx-border-radius('a', 'lg');
+///     }
+///
+/// @example - css Output
+///     .button {
+///        border-radius: 10px
+///     }
+///
+/// @since 1.0.0
+@mixin rdx-border-radius($corner: 'a', $key: 'md') {
+    $radius: border-radius($key);
+
+    @if($corner == 'a') {
+        border-radius: $radius;
+    }
+
+    @if($corner == 't') {
+        border-top-right-radius: $radius;
+        border-top-left-radius: $radius;
+    }
+
+    @if($corner == 'r') {
+        border-top-right-radius: $radius;
+        border-bottom-right-radius: $radius;
+    }
+
+    @if($corner == 'b') {
+        border-bottom-right-radius: $radius;
+        border-bottom-left-radius: $radius;
+    }
+
+    @if($corner == 'l') {
+        border-top-left-radius: $radius;
+        border-bottom-left-radius: $radius;
+    }
+}

@@ -1,0 +1,57 @@
+@include test-module('Appearance') {
+    @include test('rdx-border-radius [mixin]') {
+        @include assert('Should output border radius with default values') {
+            @include input() {
+                @include rdx-border-radius();
+            }
+
+            @include expect() {
+                border-radius: 5px;
+            }
+        }
+
+        @include assert('Should output border radius to the top right / left corners') {
+            @include input() {
+                @include rdx-border-radius($corner: 't');
+            }
+
+            @include expect() {
+                border-top-right-radius: 5px;
+                border-top-left-radius: 5px;
+            }
+        }
+
+        @include assert('Should output border radius to the right top / bottom corners') {
+            @include input() {
+                @include rdx-border-radius($corner: 'r');
+            }
+
+            @include expect() {
+                border-top-right-radius: 5px;
+                border-bottom-right-radius: 5px;
+            }
+        }
+
+        @include assert('Should output border radius to the bottom right / left corners') {
+            @include input() {
+                @include rdx-border-radius($corner: 'b');
+            }
+
+            @include expect() {
+                border-bottom-right-radius: 5px;
+                border-bottom-left-radius: 5px;
+            }
+        }
+
+        @include assert('Should output border radius to the left top / bottom corners') {
+            @include input() {
+                @include rdx-border-radius($corner: 'l');
+            }
+
+            @include expect() {
+                border-top-left-radius: 5px;
+                border-bottom-left-radius: 5px;
+            }
+        }
+    }
+}
