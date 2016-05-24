@@ -112,6 +112,34 @@
         }
     }
 
+    @include test('rdx-center [mixin]') {
+        @include assert('Outputs css properties to center in any parent with defaults') {
+            @include input() {
+                @include rdx-center();
+            }
+
+            @include expect() {
+                position: relative;
+                top: 50%;
+                left: 50%;
+                transform: translateX(-50%) translateY(-50%);
+            }
+        }
+
+        @include assert('Outputs css properties to center in any parent with absolute positioning') {
+            @include input() {
+                @include rdx-center('absolute');
+            }
+
+            @include expect() {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translateX(-50%) translateY(-50%);
+            }
+        }
+    }
+
     @include test('rdx-center-x [mixin]') {
         @include assert('Outputs css properties to center horizontally in any parent with defaults') {
             @include input() {

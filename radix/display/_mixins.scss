@@ -149,6 +149,31 @@
     z-index: layer($key) + $priority;
 }
 
+/// Centers an element on screen in both axis
+///
+/// @param {string} $position [relative] - the position property the element should use
+///
+/// @example - scss Basic Usage
+///     .alert-box {
+///        @include rdx-center();
+///     }
+///
+/// @example - css Output
+///     .alert-box {
+///        position: relative;
+///        top: 50%;
+///        left: 50%;
+///        transform: translateX(-50%) translateY(-50%);
+///     }
+///
+/// @since 1.0.0
+@mixin rdx-center($position: 'relative') {
+    position: unquote($position);
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+
 /// Horizontally centers an element on screen
 ///
 /// @param {string} $position [relative] - the position property the element should use
