@@ -6,6 +6,25 @@
 /// @author James Wigger <james@rootstudio.co.uk>
 ////
 
+/// Returns a font-family rule using the selected stack
+///
+/// @param {string} $key [body] - the stack key
+///
+/// @example - scss Basic Usage
+///     .headline {
+///        @include rdx-font-stack('heading');
+///     }
+///
+/// @example - css Output
+///     .headline {
+///        font-family: 'helvetica', 'arial', sans-serif;
+///     }
+///
+/// @since 1.0.0
+@mixin rdx-font-stack($key: 'body') {
+    font-family: font-stack($key);
+}
+
 /// Returns a font-size / line-height paring from system config by key
 ///
 /// @param {string} $key [default] - the font-size key / label

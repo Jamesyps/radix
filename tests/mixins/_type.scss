@@ -1,4 +1,26 @@
 @include test-module('Type') {
+    @include test('rdx-font-stack [mixin]') {
+        @include assert('should output the given font-family with a default') {
+            @include input() {
+                @include rdx-font-stack();
+            }
+
+            @include expect() {
+                font-family: sans-serif;
+            }
+        }
+
+        @include assert('should output the given font-family with given value') {
+            @include input() {
+                @include rdx-font-stack('test-stack');
+            }
+
+            @include expect() {
+                font-family: "georgia", serif;
+            }
+        }
+    }
+
     @include test('rdx-font-size [mixin]') {
         @include assert('should output font size / line height for key') {
             @include input() {
