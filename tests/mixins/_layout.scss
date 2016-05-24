@@ -75,22 +75,6 @@
             }
         }
 
-        // Not current possible to test: see https://github.com/oddbird/true/issues/42
-        //@include assert('Should output styles for gutterless columns') {
-        //    @include input() {
-        //        @include rdx-grid($flush: true);
-        //    }
-        //
-        //    @include expect() {
-        //        display: flex;
-        //
-        //        > * {
-        //            margin: 0;
-        //            padding: 0;
-        //        }
-        //    }
-        //}
-
         @include assert('Should output styles for reversing column order horizontally') {
             @include input() {
                 @include rdx-grid($reverse: true);
@@ -125,6 +109,42 @@
         }
     }
 
+    @include test('rdx-grid-cell [mixin]') {
+        @include assert('Should output default properties for grid cell') {
+            @include input() {
+                @include rdx-grid-cell();
+            }
+
+            @include expect() {
+                flex: 1;
+                padding-right: 5px;
+                padding-left: 5px;
+            }
+        }
+
+        @include assert('Should output properties for grid cell without gutter') {
+            @include input() {
+                @include rdx-grid-cell($gutter: false);
+            }
+
+            @include expect() {
+                flex: 1;
+            }
+        }
+
+        @include assert('Should output properties for grid cell that does not flex') {
+            @include input() {
+                @include rdx-grid-cell($flex: false);
+            }
+
+            @include expect() {
+                flex: none;
+                padding-right: 5px;
+                padding-left: 5px;
+            }
+        }
+    }
+
     @include test('rdx-span [mixin]') {
         @include assert('Should output a width rule calculated by column numbers') {
             @include input() {
@@ -132,7 +152,7 @@
             }
 
             @include expect() {
-                flex: 0;
+                flex: none;
                 width: 50%;
             }
         }

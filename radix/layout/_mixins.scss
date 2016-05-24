@@ -39,7 +39,6 @@
 /// @param {bool} $auto - Enables the auto-grid function where items will wrap
 /// @param {bool} $center-x - Horizontally centers items
 /// @param {bool} $center-y - Vertically center items
-/// @param {bool} $flush -  Removes all spacing between items
 /// @param {bool} $reverse - Reveres the order of the items
 /// @param {bool} $stack - Display items in a column rather than horizontally
 ///
@@ -58,7 +57,7 @@
 ///     }
 ///
 /// @since 1.0.0
-@mixin rdx-grid($auto: false, $center-x: false, $center-y: false, $flush: false, $reverse: false, $stack: false) {
+@mixin rdx-grid($auto: false, $center-x: false, $center-y: false, $reverse: false, $stack: false) {
     display: flex;
 
     @if $auto {
@@ -77,13 +76,6 @@
         align-items: center;
     }
 
-    @if $flush {
-        > * {
-            margin: 0;
-            padding: 0;
-        }
-    }
-
     @if $reverse {
         @if $stack {
             flex-direction: column-reverse;
@@ -94,6 +86,34 @@
 
     @if $stack AND $reverse == false {
         flex-direction: column;
+    }
+}
+
+/// Defines properties on an element that enables it to become a grid cell
+///
+/// @example - scss Basic Usage
+///     .grid-cell {
+///         @include rdx-grid-cell();
+///     }
+///
+/// @example - css Output
+///     .grid-cell {
+///        flex: 1;
+///        padding-left: 10px;
+///        padding-right: 10px;
+///     }
+///
+/// @since 1.0.0
+@mixin rdx-grid-cell($gutter: true, $flex: true) {
+    @if($flex == true) {
+        flex: 1;
+    } @else {
+        flex: none;
+    }
+
+    @if($gutter == true) {
+        padding-right: ($radix-gs-gutter / 2);
+        padding-left: ($radix-gs-gutter / 2);
     }
 }
 
@@ -112,7 +132,7 @@
 ///
 /// @since 1.0.0
 @mixin rdx-span($span) {
-    flex: 0;
+    flex: none;
     width: column-width($span);
 }
 
