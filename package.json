@@ -1,14 +1,14 @@
 {
   "name": "radix-framework",
   "version": "0.5.0",
-  "description": "The Root Studio modern framework based on Flexbox",
+  "description": "A micro Sass framework for managing common project settings in a flexbox grid",
   "author": "James Wigger <james.s.wigger@gmail.com>",
   "license": "MIT",
-  "homepage": "https://bitbucket.org/JimRoot/radix-framework#readme",
+  "homepage": "https://github.com/Jamesyps/radix-framework",
   "main": "radix.scss",
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@bitbucket.org/JimRoot/radix-framework.git"
+    "url": "git+ssh://git@github.com:Jamesyps/radix-framework.git"
   },
   "keywords": [
     "css",
@@ -17,7 +17,8 @@
     "flexbox",
     "framework",
     "grid",
-    "responsive"
+    "responsive",
+    "eyeglass-module"
   ],
   "devDependencies": {
     "autoprefixer": "^6.3.3",
