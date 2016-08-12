@@ -2,7 +2,7 @@
   "name": "radix-framework",
   "version": "0.5.0",
   "description": "The Root Studio modern framework based on Flexbox",
-  "author": "James Wigger <james@rootstudio.co.uk>",
+  "author": "James Wigger <james.s.wigger@gmail.com>",
   "license": "MIT",
   "homepage": "https://bitbucket.org/JimRoot/radix-framework#readme",
   "main": "radix.scss",
