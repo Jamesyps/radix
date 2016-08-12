@@ -69,25 +69,6 @@
     }
 }
 
-/// Apply a display property to an element
-///
-/// @param {string} $property [block]- The display property to be applied
-///
-/// @example - scss Basic Usage
-///     .action-button {
-///        @include rdx-display('inline-block');
-///     }
-///
-/// @example - css Output
-///     .action-button {
-///        display: inline-block;
-///     }
-///
-/// @since 1.0.0
-@mixin rdx-display($property: 'block') {
-    display: unquote($property);
-}
-
 /// Applies styles to an element that will allow it to fill the width of its parent
 ///
 /// @example - scss Basic Usage
@@ -103,8 +84,7 @@
 ///
 /// @since 1.0.0
 @mixin rdx-fill() {
-    @include rdx-display('block');
-
+    display: block;
     width: 100%;
 }
 
@@ -124,8 +104,7 @@
 ///
 /// @since 1.0.0
 @mixin rdx-fit() {
-    @include rdx-display('block');
-
+    display: block;
     max-width: 100%;
 }
 

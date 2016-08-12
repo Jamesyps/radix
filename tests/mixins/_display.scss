@@ -42,28 +42,6 @@
         }
     }
 
-    @include test('rdx-display [mixin]') {
-        @include assert('Outputs a display property with defaults') {
-            @include input() {
-                @include rdx-display();
-            }
-
-            @include expect() {
-                display: block;
-            }
-        }
-
-        @include assert('Outputs a display property with set value') {
-            @include input() {
-                @include rdx-display('inline-block');
-            }
-
-            @include expect() {
-                display: inline-block;
-            }
-        }
-    }
-
     @include test('rdx-fill [mixin]') {
         @include assert('Outputs css properties to fill width of parent') {
             @include input() {

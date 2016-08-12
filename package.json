@@ -29,7 +29,7 @@
     "sassdoc": "^2.1.20"
   },
   "scripts": {
-    "api-docs": "sassdoc ./radix -c ./.sassdoc.json",
+    "docs": "sassdoc ./radix -c ./.sassdoc.json",
     "pre-commit": "npm run test",
     "test": "mocha ./tests/test_sass.js"
   }
