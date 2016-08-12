@@ -146,4 +146,37 @@
             }
         }
     }
+
+    @include test('rdx-reset-spacing [mixin]') {
+        @include assert('Should reset both inner (padding) and outer (margin) spacing') {
+            @include input() {
+                @include rdx-reset-spacing();
+            }
+
+            @include expect() {
+                margin: 0;
+                padding: 0;
+            }
+        }
+
+        @include assert('Should only reset outer (margin) spacing') {
+            @include input() {
+                @include rdx-reset-spacing($inner: false);
+            }
+
+            @include expect() {
+                margin: 0;
+            }
+        }
+
+        @include assert('Should only reset inner (padding) spacing') {
+            @include input() {
+                @include rdx-reset-spacing($outer: false);
+            }
+
+            @include expect() {
+                padding: 0;
+            }
+        }
+    }
 }

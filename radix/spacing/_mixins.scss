@@ -96,3 +96,30 @@
         padding-left: spacing($key);
     }
 }
+
+/// Resets spacing on an element, useful for removing browser default padding / margins
+///
+/// @param {bool} $outer [true] - Reset the outer spacing (margin) to 0
+/// @param {bool} $inner [true] - Reset the inner spacing (padding) to 0
+///
+/// @example - scss Basic Usage
+///     figure {
+///         @include rdx-reset-spacing();
+///     }
+///
+/// @example - css Output
+///     figure {
+///         margin: 0;
+///         padding: 0;
+///     }
+///
+/// @since 1.0.0
+@mixin rdx-reset-spacing($outer: true, $inner: true) {
+    @if ($outer == true) {
+        margin: 0;
+    }
+
+    @if($inner == true) {
+        padding: 0;
+    }
+}
