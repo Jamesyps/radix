@@ -28,7 +28,7 @@ Radix comes with functions, mixins and configuration variables for:
 * Spacing
 * Typography
 
-You can find out more in the [API reference]().
+You can find out more in the [API reference](http://jameswigger.co.uk/radix-framework/).
 
 ## Issues / Requests
 
@@ -37,4 +37,4 @@ Please include code examples for bug reports or problems that you are having.
 
 ## Contributing
 
-Please see the [contribution guide](CONTRIBUTING.md) for more information.
+Please see the [contribution guide](https://github.com/Jamesyps/radix-framework/blob/master/CONTRIBUTING.md) for more information.

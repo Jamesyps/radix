@@ -1,14 +1,17 @@
 {
   "name": "radix-framework",
   "version": "0.5.0",
-  "description": "A micro Sass framework for managing common project settings in a flexbox grid",
+  "description": "A micro Sass framework with a simple API and a Flexbox grid system.",
   "author": "James Wigger <james.s.wigger@gmail.com>",
   "license": "MIT",
   "homepage": "https://github.com/Jamesyps/radix-framework",
-  "main": "radix.scss",
+  "main": "radix-framework.scss",
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com:Jamesyps/radix-framework.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Jamesyps/radix-framework/issues"
   },
   "keywords": [
     "css",
@@ -32,8 +35,13 @@
   },
   "scripts": {
     "docs": "sassdoc ./radix -c ./.sassdoc.json",
+    "docs-publish": "npm run docs && git add ./api && git commit -m \"Generate API docs with SassDoc\" && git subtree push --prefix api origin gh-pages",
     "pre-commit": "npm run test",
     "test": "mocha ./tests/test_sass.js",
     "lint": "sass-lint -c .sass-lint.yml -v -q"
+  },
+  "eyeglass": {
+    "sassDir": "./radix-framework.scss",
+    "exports": false
   }
 }

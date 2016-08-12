@@ -1,3 +1,10 @@
 {
-  "dest": "./api"
+  "dest": "./api",
+  "descriptionPath": "./README.md",
+  "display": {
+    "access": [
+      "public",
+      "private"
+    ]
+  }
 }
