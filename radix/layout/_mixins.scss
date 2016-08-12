@@ -132,8 +132,8 @@
 ///
 /// @since 1.0.0
 @mixin rdx-span($span) {
-    flex: none;
     width: column-width($span);
+    flex: none;
 }
 
 /// Sets the offset for an element not using the CSS grid classes

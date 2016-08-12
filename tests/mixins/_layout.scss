@@ -152,8 +152,8 @@
             }
 
             @include expect() {
-                flex: none;
                 width: 50%;
+                flex: none;
             }
         }
     }

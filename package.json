@@ -26,12 +26,14 @@
     "mocha": "^3.0.2",
     "node-sass": "^3.4.2",
     "postcss-cli": "^2.5.1",
+    "sass-lint": "^1.8.2",
     "sass-true": "^2.0.3",
     "sassdoc": "^2.1.20"
   },
   "scripts": {
     "docs": "sassdoc ./radix -c ./.sassdoc.json",
     "pre-commit": "npm run test",
-    "test": "mocha ./tests/test_sass.js"
+    "test": "mocha ./tests/test_sass.js",
+    "lint": "sass-lint -c .sass-lint.yml -v -q"
   }
 }
