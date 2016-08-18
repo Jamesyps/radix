@@ -3,6 +3,8 @@
 Radix, latin for 'source', is a micro Sass framework that manages settings, colour palettes, 
 spacing and a flexbox based grid system.
 
+[![Build Status](https://semaphoreci.com/api/v1/jamesyps/radix-framework/branches/master/shields_badge.svg)](https://semaphoreci.com/jamesyps/radix-framework)
+
 ## Installing
 
 To install Radix either of the following methods can be used:
