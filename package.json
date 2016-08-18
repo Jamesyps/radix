@@ -36,12 +36,13 @@
   "scripts": {
     "docs": "sassdoc ./radix -c ./.sassdoc.json",
     "docs-publish": "npm run docs && git add ./api && git commit -m \"Generate API docs with SassDoc\" && git subtree push --prefix api origin gh-pages",
-    "pre-commit": "npm run test",
+    "pre-commit": "npm run test && npm run lint",
     "test": "mocha ./tests/test_sass.js",
     "lint": "sass-lint -c .sass-lint.yml -v -q"
   },
   "eyeglass": {
     "sassDir": "./radix-framework.scss",
-    "exports": false
+    "exports": false,
+    "needs": "^0.8.3"
   }
 }

@@ -10,9 +10,8 @@ options:
   merge-default-rules: false
 rules:
   attribute-quotes: 2,
-  # This has a conflict with placeholder names
-  #bem-depth:
-  #  - max-depth: 1
+  bem-depth:
+    - max-depth: 1
   border-zero: 2
   brace-style:
     - 2

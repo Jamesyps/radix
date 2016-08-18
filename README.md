@@ -19,6 +19,11 @@ Once this is complete import the root file into your project before any styles a
 @import 'radix-framework';
 ```
 
+## Configuration
+
+Variables in the `$user-` namespace can be extended by your projects.
+The modifiable configuration options can be [found here](https://github.com/Jamesyps/radix-framework/blob/master/radix/framework/_settings.scss).
+
 ## APIs
 
 Radix comes with functions, mixins and configuration variables for:
