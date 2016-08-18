@@ -11,10 +11,12 @@
 ///
 /// @access private
 /// @since 1.0.0
-$radix-spacing: merge((
-    'xs': 0.3125rem,
-    'sm': 0.625rem,
-    'md': 1.25rem,
-    'lg': 2.5rem,
-    'xl': 5rem
-), $user-spacing);
+$radix-spacing: merge(
+    (
+        'xs': 0.3125rem,
+        'sm': 0.625rem,
+        'md': 1.25rem,
+        'lg': 2.5rem,
+        'xl': 5rem
+    ), $user-spacing
+);

@@ -12,33 +12,39 @@
 ///
 /// @access private
 /// @since 1.0.0
-$radix-colours: merge((
-    'default': #ECECED,
-    'primary': #00ADB5,
-    'secondary': #47555E,
-    'success': #52AA3F,
-    'warning': #FEC057,
-    'error': #FA5554
-), $user-colours);
+$radix-colours: merge(
+    (
+        'default': #ECECED,
+        'primary': #00ADB5,
+        'secondary': #47555E,
+        'success': #52AA3F,
+        'warning': #FEC057,
+        'error': #FA5554
+    ), $user-colours
+);
 
 /// The system default border-radius map that users can extend or modify.
 /// This should not be modified directly.
 ///
 /// @access private
 /// @since 1.0.0
-$radix-radii: merge((
-    'sm': 3px,
-    'md': 5px,
-    'lg': 10px
-), $user-radii);
+$radix-radii: merge(
+    (
+        'sm': 3px,
+        'md': 5px,
+        'lg': 10px
+    ), $user-radii
+);
 
 /// The system default border width map that users can extend or modify.
 /// This should not be modified directly.
 ///
 /// @access private
 /// @since 1.0.0
-$radix-border-widths: merge((
-    'sm': 1px,
-    'md': 2px,
-    'lg': 3px
-), $user-border-widths);
+$radix-border-widths: merge(
+    (
+        'sm': 1px,
+        'md': 2px,
+        'lg': 3px
+    ), $user-border-widths
+);
